@@ -10,7 +10,7 @@ module Practica6
                 @carbohidratos = carbohidratos
                 @lipidos = lipidos
                 @GEI = gei
-                @terren = terreno
+                @terreno = terreno
         end  
   end
 end
