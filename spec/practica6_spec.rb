@@ -1,4 +1,4 @@
-
+require './lib/practica6.rb'
 
 
 
