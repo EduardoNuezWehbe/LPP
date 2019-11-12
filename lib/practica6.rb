@@ -17,6 +17,9 @@ module Practica6
         end
         def getGEI
 		@GEI
+	end
+	def getTerreno
+		@terreno
 	end	
   end
 end
