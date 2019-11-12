@@ -12,8 +12,11 @@ module Practica6
                 @GEI = gei
                 @terreno = terreno
         end 
-       def getNombre 
-	       @nombre
-       end	       
+        def getNombre 
+	        @nombre
+        end
+        def getGEI
+		@GEI
+	end	
   end
 end
