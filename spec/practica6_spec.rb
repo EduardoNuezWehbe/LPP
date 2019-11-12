@@ -36,8 +36,14 @@ describe Practica6::Alimento do
 end
 describe Practica6::Alimento do
         carneVaca = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
-        it 'existe una cantidad de emision gases efecto invernadero' do
+        it 'existe un metodo que devuelva el gas de efecto invernadero' do
 		expect(carneVaca.getGEI).to eq(50.0)
+        end
+end
+describe Practica6::Alimento do
+        carneVaca = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
+        it 'existe un metodo que devuelva la cantidad de terreno utilizado en metro cuadrado' do
+		expect(carneVaca.getTerreno).to eq(164.0)
         end
 end
 
