@@ -9,8 +9,8 @@ module Practica6
                 @proteinas = proteinas
                 @carbohidratos = carbohidratos
                 @lipidos = lipidos
-                @GEI = gei
-                @terreno = terreno
+                @gei = gei
+                @terren = terreno
         end  
   end
 end

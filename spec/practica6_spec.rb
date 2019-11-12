@@ -16,4 +16,10 @@ describe Practica6::Alimento do
                 expect(carneVaca).to have_attributes(:nombre => "carne de vaca")
         end
 end
+describe Practica6::Alimento do
+        carneVaca = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
+        it 'existe una cantidad de emision gases efecto invernadero' do
+		expect(carneVaca).to have_attributes(:GEI => "50.0")
+        end
+end
 
