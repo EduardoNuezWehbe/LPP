@@ -22,4 +22,12 @@ describe Practica6::Alimento do
 		expect(carneVaca).to have_attributes(:GEI => 50.0)
         end
 end
+describe Practica6::Alimento do
+        carneVaca = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
+        it 'existe una cantidad de terreno utilizado en metro cuadrado' do
+		expect(carneVaca).to have_attributes(:terreno => 164.0)
+        end
+end
+
+
 
