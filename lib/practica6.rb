@@ -11,6 +11,9 @@ module Practica6
                 @lipidos = lipidos
                 @GEI = gei
                 @terreno = terreno
-        end  
+        end 
+       def getNombre 
+	       @nombre
+       end	       
   end
 end
