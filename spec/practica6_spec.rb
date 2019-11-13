@@ -60,16 +60,26 @@ describe Practica6::Alimento do
         end
 end
 describe Practica6::Alimento do
-        carneVaca = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
 	chocolate = Practica6::Alimento.new("chocolate",5.3,47.0,30.0,2.3,3.4)
 	lecheDeVaca = Practica6::Alimento.new("leche de vaca",3.3,4.8,3.2,3.2,8.9)
 	nuez = Practica6::Alimento.new("nuez",20.0,21.0,54.0,0.3,7.9)
 	cerveza = Practica6::Alimento.new("cerveza",0.5,3.6,0.0,0.24,0.22)
        	
 	it 'existe un metodo que evalue si la alimentacion es buena' do
-		expect(chocolate.impactoAmbiental((chocolate.getValorCalorico*4),nuez.getValorCalorico,(cerveza.getValorCalorico*2),(lecheDeVaca.getValorCalorico*3))).to eq(3018.2)
+		expect(chocolate.impactoAmbientalHombre((chocolate.getValorCalorico*4),nuez.getValorCalorico,(cerveza.getValorCalorico*2),(lecheDeVaca.getValorCalorico*3))).to eq(3018.2)
         end
 end
+describe Practica6::Alimento do
+        chocolate = Practica6::Alimento.new("chocolate",5.3,47.0,30.0,2.3,3.4)
+	cafe = Practica6::Alimento.new("cafe",0.1,0.0,0.0,0.4,0.3)
+	lentejas = Practica6::Alimento.new("lentejas",23.5,52.0,1.4,0.4,3.4)
+        cerveza = Practica6::Alimento.new("cerveza",0.5,3.6,0.0,0.24,0.22)
+
+        it 'existe un metodo que evalue si la alimentacion es buena' do
+                expect(chocolate.impactoAmbientalMujer((chocolate.getValorCalorico*3),cafe.getValorCalorico,cerveza.getValorCalorico,lentejas.getValorCalorico)).to eq(3018.2)
+        end
+end
+
 
 
 

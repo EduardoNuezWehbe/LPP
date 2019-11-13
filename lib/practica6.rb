@@ -30,6 +30,7 @@ module Practica6
 	def getProteinas
 		@proteinas
 	end
+
 	def getValorCalorico
 		resultado = 0.00
 		resultado ='%0.1f'% ((getProteinas*4) +(getLipidos*4) + (getCarbohidratos*9))	
@@ -38,7 +39,7 @@ module Practica6
 	def to_s
 		"(#{@nombre})"
 	end
-	def impactoAmbiental(chocolate,nuez,cerveza,leche)
+	def impactoAmbientalHombre(chocolate,nuez,cerveza,leche)
 		
 		resultado ='%0.1f'% (chocolate+nuez+cerveza+leche)
 		return resultado.to_f
