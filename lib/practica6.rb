@@ -32,16 +32,16 @@ module Practica6
 	end
 	def getValorCalorico
 		resultado = 0.00
-		resultado ='%0.1f'% ((getProteinas*4) +(getLipidos*4) + (getCarbohidratos*9))
-		
-		return resultado
+		resultado ='%0.1f'% ((getProteinas*4) +(getLipidos*4) + (getCarbohidratos*9))	
+		return resultado.to_f
 	end
 	def to_s
 		"(#{@nombre})"
 	end
 	def impactoAmbiental(chocolate,nuez,cerveza,leche)
-		resultado = 0.00
-		resultado = '%0.1f' % (chocolate+nuez+cerveza+leche)
-		return resultado
+		
+		resultado ='%0.1f'% (chocolate+nuez+cerveza+leche)
+		return resultado.to_f
+	end
   end
 end

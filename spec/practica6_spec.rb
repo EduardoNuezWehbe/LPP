@@ -49,7 +49,7 @@ end
 describe Practica6::Alimento do
         carneVaca = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
         it 'existe un metodo que calcule el valor calorico de un alimento' do
-		expect(carneVaca.getValorCalorico).to eq("96.8")
+		expect(carneVaca.getValorCalorico).to eq(96.8)
         end
 end
 describe Practica6::Alimento do
@@ -67,7 +67,7 @@ describe Practica6::Alimento do
 	cerveza = Practica6::Alimento.new("cerveza",0.5,3.6,0.0,0.24,0.22)
        	
 	it 'existe un metodo que evalue si la alimentacion es buena' do
-		expect(chocolate.impactoAmbiental((chocolate.getValorCalorico*4),nuez.getValorCalorico,(cerveza.getValorCalorico*2),(lecheDeVaca.getValorCalorico*3))).to eq(2973.8)
+		expect(chocolate.impactoAmbiental((chocolate.getValorCalorico*4),nuez.getValorCalorico,(cerveza.getValorCalorico*2),(lecheDeVaca.getValorCalorico*3))).to eq(3018.2)
         end
 end
 
