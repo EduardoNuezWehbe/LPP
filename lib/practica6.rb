@@ -39,5 +39,9 @@ module Practica6
 	def to_s
 		"(#{@nombre})"
 	end
+	def impactoAmbiental(chocolate,nuez,cerveza,leche)
+		resultado = 0.00
+		resultado = '%0.1f' % (chocolate+nuez+cerveza+leche)
+		return resultado
   end
 end
