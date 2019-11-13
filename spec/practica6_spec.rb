@@ -52,6 +52,13 @@ describe Practica6::Alimento do
 		expect(carneVaca.getValorCalorico).to eq("96.8")
         end
 end
+describe Practica6::Alimento do
+        carneVaca = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
+      	@nombre = carneVaca.getNombre
+      	it 'existe un metodo que formatee el alimento a sting' do
+		expect(@nombre.to_s).to eq("carne de vaca")
+        end
+end
 
 
 
