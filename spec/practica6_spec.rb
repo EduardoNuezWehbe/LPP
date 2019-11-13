@@ -76,7 +76,8 @@ describe Practica6::Alimento do
         cerveza = Practica6::Alimento.new("cerveza",0.5,3.6,0.0,0.24,0.22)
 
         it 'existe un metodo que evalue si la alimentacion es buena' do
-                expect(chocolate.impactoAmbientalMujer((chocolate.getValorCalorico*3),cafe.getValorCalorico,cerveza.getValorCalorico,lentejas.getValorCalorico)).to eq(3018.2)
+		expect(chocolate.impactoAmbientalMujer((chocolate.getValorCalorico*3),cafe.getValorCalorico,cerveza.getValorCalorico,lentejas.getValorCalorico)).to eq(2295.0
+)
         end
 end
 

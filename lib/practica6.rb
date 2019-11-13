@@ -44,5 +44,9 @@ module Practica6
 		resultado ='%0.1f'% (chocolate+nuez+cerveza+leche)
 		return resultado.to_f
 	end
+	def impactoAmbientalMujer(chocolate,cafe,cerveza,lentejas)
+		resultado = '%0.1f'% (chocolate+cafe+cerveza+lentejas)
+		return resultado.to_f
+	end
   end
 end
