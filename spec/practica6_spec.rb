@@ -49,7 +49,7 @@ end
 describe Practica6::Alimento do
         carneVaca = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
         it 'existe un metodo que calcule el valor calorico de un alimento' do
-		expect(carneVaca.getValorCalorico).to eq(96.8)
+		expect(carneVaca.getValorCalorico).to eq("96.8")
         end
 end
 

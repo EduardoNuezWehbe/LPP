@@ -20,6 +20,21 @@ module Practica6
 	end
 	def getTerreno
 		@terreno
+	end
+	def getLipidos 
+		@lipidos
 	end	
+	def getCarbohidratos 
+		@carbohidratos
+	end
+	def getProteinas
+		@proteinas
+	end
+	def getValorCalorico
+		resultado = 0.00
+		resultado ='%0.1f'% ((getProteinas*4) +(getLipidos*4) + (getCarbohidratos*9))
+		
+		return resultado
+	end
   end
 end
