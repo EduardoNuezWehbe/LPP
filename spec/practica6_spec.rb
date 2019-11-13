@@ -54,9 +54,9 @@ describe Practica6::Alimento do
 end
 describe Practica6::Alimento do
         carneVaca = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
-      	@nombre = carneVaca.getNombre
+	@nombre = Practica6::Alimento.new(nil,nil,nil,nil,nil,nil)
       	it 'existe un metodo que formatee el alimento a sting' do
-		expect(@nombre.to_s).to eq("carne de vaca")
+		expect(@nombre.to_s).to eq("")
         end
 end
 

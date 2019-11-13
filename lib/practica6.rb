@@ -36,5 +36,8 @@ module Practica6
 		
 		return resultado
 	end
+	def to_s
+		"(#{@nombre})"
+	end
   end
 end
