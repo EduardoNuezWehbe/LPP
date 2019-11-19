@@ -38,11 +38,26 @@ module Practica6
 				
 			end
 		end
+		def deleteTail
+			if @tail == @head
+				@tail = nil
+				@head = nil
+			elsif @tail.value != nil 			 
+				valor = @tail.prev
+				valor.next = nil
+				@tail = valor
+			end
+
+		end
 		def getHead
-                        return @head
+                        if @head
+				return @head
+			end
                 end
 		def getTail
-                        return @tail
+			if @tail
+                        	return @tail
+			end
                 end
 	end
 end

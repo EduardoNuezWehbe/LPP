@@ -142,8 +142,9 @@ describe Practica6::Lista do
 		expect(lista.getTail.prev.prev.value).to eq(4)
 	end
 	it 'Prueba para eliminar el elemento en la ultima posicion' do
-		lista.deleteTail()
+		lista.deleteTail() #eliminamos 6 y esperamos 5
 		expect(lista.getTail.value).to eq(5)
-
+		expect(lista.getTail.next).to eq(nil)
 	end
+
 end
