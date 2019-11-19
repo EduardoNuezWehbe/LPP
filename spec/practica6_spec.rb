@@ -99,4 +99,8 @@ describe Practica6::Lista do
 		lista = Practica6::Lista.new
     		expect(lista).to be_kind_of(Practica6::Lista)
 	end
+	it 'crea un objeto Struct' do
+		struct = Practica6::Nodo.new(5,1,2)	
+		expect(struct).to be_kind_of(Practica6::Nodo)
+	end
 end
