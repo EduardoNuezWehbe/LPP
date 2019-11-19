@@ -37,7 +37,7 @@ module Practica6
 		return resultado.to_f
 	end
 	def to_s
-		"(#{@nombre})"
+		"#{@nombre}"
 	end
 	def impactoAmbientalHombre(chocolate,nuez,cerveza,leche)
 		
