@@ -96,11 +96,16 @@ end
 
 describe Practica6::Lista do
 	it 'crea un objeto tipo lista' do
-		lista = Practica6::Lista.new
+		lista = Practica6::Lista.new(1)
     		expect(lista).to be_kind_of(Practica6::Lista)
 	end
 	it 'crea un objeto Struct' do
 		struct = Practica6::Nodo.new(5,1,2)	
 		expect(struct).to be_kind_of(Practica6::Nodo)
 	end
+	it 'Existe un Nodo de la lista con sus datos' do
+		lista = Practica6::Lista.new(1)
+		expect(lista).not_to eq(nil)	
+	end
+		
 end
