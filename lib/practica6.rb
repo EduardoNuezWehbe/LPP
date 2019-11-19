@@ -52,5 +52,9 @@ module Practica6
 		resultado = '%0.2f'% (chocolate+cafe+cerveza+lentejas)
 		return resultado.to_f
 	end
+	def calculaTerreno(chocolate,cafe,cerveza,lentejas)
+		resultado = '%0.2f'% (chocolate+cafe+cerveza+lentejas)
+                return resultado.to_f
+	end
   end
 end

@@ -84,7 +84,7 @@ describe Practica6::Alimento do
 
 	end
 	it 'existe un metodo que calcule el terreno de la dieta' do
-		expect(chocolate.calculaTerreno((chocolate.getTerreno*3),cafe.getTerreno,cerveza.getTerreno,lentejas.getTerreno)).to eq(10)
+		expect(chocolate.calculaTerreno((chocolate.getTerreno*3),cafe.getTerreno,cerveza.getTerreno,lentejas.getTerreno)).to eq(14.12)
 	end
 end
 
