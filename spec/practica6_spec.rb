@@ -107,5 +107,11 @@ describe Practica6::Lista do
 		lista = Practica6::Lista.new(1)
 		expect(lista).not_to eq(nil)	
 	end
+	it 'Existe un head y un tail' do
+               lista = Practica6::Lista.new(1)
+               expect(lista.head).not_to eq(nil)
+               expect(lista.tail).not_to eq(nil)
+        end
+
 		
 end
