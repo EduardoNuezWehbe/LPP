@@ -95,8 +95,8 @@ end
 ##########################################################################
 
 describe Practica6::Lista do
+        lista = Practica6::Lista.new(1)
 	it 'crea un objeto tipo lista' do
-		lista = Practica6::Lista.new(1)
     		expect(lista).to be_kind_of(Practica6::Lista)
 	end
 	it 'crea un objeto Struct' do
@@ -104,14 +104,22 @@ describe Practica6::Lista do
 		expect(struct).to be_kind_of(Practica6::Nodo)
 	end
 	it 'Existe un Nodo de la lista con sus datos' do
-		lista = Practica6::Lista.new(1)
 		expect(lista).not_to eq(nil)	
 	end
 	it 'Existe un head y un tail' do
-               lista = Practica6::Lista.new(1)
                expect(lista.head).not_to eq(nil)
                expect(lista.tail).not_to eq(nil)
         end
-
-		
+	it 'Existe un metodo insert nodo' do
+		nodo = Practica6::Nodo.new(2,nil,nil)
+		valor = lista.getHead
+		lista.insertHead(nodo)
+		anterior = lista.getHead.next
+		expect(lista.getHead.next).to eq(valor)
+		expect(lista.getHead.prev).to eq(nil)
+		expect(lista.getHead.value).to eq(2)
+		expect(anterior.prev).to eq(lista.getHead)
+		expect(anterior.next).to eq(nil)
+		expect(anterior.value).to eq(1)
+	end	
 end
