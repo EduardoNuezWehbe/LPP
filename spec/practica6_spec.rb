@@ -80,8 +80,11 @@ describe Practica6::Alimento do
 )
 	end
         it 'existe un metodo que calcule el GEI de la dieta' do
-        expect(chocolate.calculaGEI((chocolate.getGEI*3),cafe.getGEI,cerveza.getGEI,lentejas.getGEI)).to eq(7.94)
+        	expect(chocolate.calculaGEI((chocolate.getGEI*3),cafe.getGEI,cerveza.getGEI,lentejas.getGEI)).to eq(7.94)
 
+	end
+	it 'existe un metodo que calcule el terreno de la dieta' do
+		expect(chocolate.calculaTerreno((chocolate.getTerreno*3),cafe.getTerreno,cerveza.getTerreno,lentejas.getTerreno)).to eq(10)
 	end
 end
 
