@@ -110,7 +110,7 @@ describe Practica6::Lista do
                expect(lista.head).not_to eq(nil)
                expect(lista.tail).not_to eq(nil)
         end
-	it 'Existe un metodo insert nodo' do
+	it 'Existe un metodo insert head nodo' do
 		nodo = Practica6::Nodo.new(2,nil,nil)
 		valor = lista.getHead
 		lista.insertHead(nodo)
@@ -122,4 +122,9 @@ describe Practica6::Lista do
 		expect(anterior.next).to eq(nil)
 		expect(anterior.value).to eq(1)
 	end	
+	it 'Existe un metodo insert tail nodo' do
+		nodo = Practica6::Nodo.new(2,nil,nil)
+		lista.insertTail(nodo)
+		expect(lista.getTail.getPrev).to eq(lista.getHead)
+	end
 end
