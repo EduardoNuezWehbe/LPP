@@ -89,8 +89,14 @@ describe Practica6::Alimento do
 end
 
 
+##########################################################################
+##################   PRACTICA 7 CONTINUACION  ############################
+##########################################################################
 
-
-
-
+describe Practica6::Lista do
+	it 'crea un objeto tipo lista' do
+    		alimento = Practica6::Lista.new
+    		expect(alimento).to be_kind_of(Practica6::Lista)
+	end
+end
 
