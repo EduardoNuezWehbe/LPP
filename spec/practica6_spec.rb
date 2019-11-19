@@ -94,9 +94,9 @@ end
 ##################   PRACTICA 7 CONTINUACION  ############################
 ##########################################################################
 
-describe Lista do
+describe Practica6::Lista do
 	it 'crea un objeto tipo lista' do
-		lista = Lista.new
-    		expect(lista).to be_kind_of(Lista)
+		lista = Practica6::Lista.new
+    		expect(lista).to be_kind_of(Practica6::Lista)
 	end
 end

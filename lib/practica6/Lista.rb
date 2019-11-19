@@ -1,3 +1,6 @@
-Nodo = Struct.new(:value,:next,:prev)
-class Lista
+require "practica6/version"
+
+module Practica6
+	class Lista
+	end
 end
