@@ -10,7 +10,13 @@ module Practica6
 			@tail = Nodo.new(nil,nil,nil)
 		end
 		def insertHead (nuevoNodo)
-                        if @head
+			if @head.value != nil && @head.next == nil
+				valor = @head
+				@head = nuevoNodo
+				@tail = valor
+				@head.next = @tail
+				@tail.prev = @head
+			elsif @head.value != nil
                                 valor = @head
                                 @head = nuevoNodo
                                 @head.next = valor
@@ -18,10 +24,25 @@ module Practica6
                         else
                                 @head = nuevoNodo
                         end
-                end
+		end
+		def insertTail (nuevoNodo)
+			if @tail.value != nil
+				valor = @tail
+				@tail = nuevoNodo
+				valor.next = @tail
+				@tail.prev = valor
+			else
+				@tail = nuevoNodo
+				@tail.prev = @head
+				@head.next = @tail
+				
+			end
+		end
 		def getHead
                         return @head
                 end
-		
+		def getTail
+                        return @tail
+                end
 	end
 end

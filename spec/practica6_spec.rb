@@ -123,8 +123,12 @@ describe Practica6::Lista do
 		expect(anterior.value).to eq(1)
 	end	
 	it 'Existe un metodo insert tail nodo' do
-		nodo = Practica6::Nodo.new(2,nil,nil)
+		nodo = Practica6::Nodo.new(3,nil,nil)
 		lista.insertTail(nodo)
-		expect(lista.getTail.getPrev).to eq(lista.getHead)
+
+		lista.insertTail(Practica6::Nodo.new(4,nil,nil))
+		expect(lista.getTail.value).to eq(4)
+		expect(lista.getTail.prev.value).to eq(3)
+		expect(lista.getTail.prev.next).to eq(lista.getTail)
 	end
 end
