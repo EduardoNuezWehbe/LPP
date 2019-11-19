@@ -146,5 +146,9 @@ describe Practica6::Lista do
 		expect(lista.getTail.value).to eq(5)
 		expect(lista.getTail.next).to eq(nil)
 	end
-
+	it 'Prueba para eliminar el elemento de la primera posicion' do
+		lista.deleteHead() #eliminamos 2 y esperamos 1
+		expect(lista.getHead.value).to eq(1)
+		expect(lista.getHead.prev).to eq(nil)
+	end
 end
