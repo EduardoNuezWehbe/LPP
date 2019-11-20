@@ -134,9 +134,10 @@ describe Practica6::Lista do
 	it 'Prueba de que se pueden insertar varios elementos' do
 		nodo = Practica6::Nodo.new(5,nil,nil)
 		nodo2 = Practica6::Nodo.new(6,nil,nil)
+		
+		nodoAInsertar = [nodo , nodo2]
 
-		lista.insertTail(nodo)
-		lista.insertTail(nodo2)
+		lista.insertVector(nodoAInsertar)
 		expect(lista.getTail.value).to eq(6)
 		expect(lista.getTail.prev.value).to eq(5)
 		expect(lista.getTail.prev.prev.value).to eq(4)

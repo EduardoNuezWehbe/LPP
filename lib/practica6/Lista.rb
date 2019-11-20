@@ -38,6 +38,10 @@ module Practica6
 				
 			end
 		end
+		def insertVector (vector) 
+			vector.each {|n| insertTail(n)}
+		end	
+			
 		def deleteTail
 			if @tail == @head
 				@tail = nil
@@ -49,6 +53,17 @@ module Practica6
 			end
 
 		end
+		def deleteHead
+			if @head == @tail
+				@tail = nil
+				@head = nil
+			elsif @head.value != nil
+				valor = @head.next
+				valor.prev = nil
+				@head = valor
+			end
+		end
+	
 		def getHead
                         if @head
 				return @head
