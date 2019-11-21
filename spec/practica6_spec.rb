@@ -148,8 +148,8 @@ describe Practica6::Lista do
 		expect(lista.getTail.next).to eq(nil)
 	end
 	it 'Prueba para eliminar el elemento de la primera posicion' do
-		lista.deleteHead() #eliminamos 2 y esperamos 3
-		expect(lista.getHead.value).to eq(3)
+		lista.deleteHead() #eliminamos 2 y esperamos 1
+		expect(lista.getHead.value).to eq(1)
 		expect(lista.getHead.prev).to eq(nil)
 	end
 end
