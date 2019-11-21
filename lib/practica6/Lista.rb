@@ -17,7 +17,7 @@ module Practica6
 				@head.next = @tail
 				@tail.prev = @head
 			elsif @head.value != nil
-                                valor = @head
+			       	valor = @head
                                 @head = nuevoNodo
                                 @head.next = valor
                                 valor.prev = @head
@@ -40,6 +40,9 @@ module Practica6
 		end
 		def insertVector (vector) 
 			vector.each {|n| insertTail(n)}
+		end
+		def insertVectorHead (vector)
+			vector.each {|n| insertHead(n)}
 		end	
 			
 		def deleteTail
