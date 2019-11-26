@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = "https://github.com/ULL-ESIT-LPP-1920/tdd-EduardoNuezWehbe"
   spec.metadata["source_code_uri"] = "https://github.com/ULL-ESIT-LPP-1920/tdd-EduardoNuezWehbe"
   spec.metadata["changelog_uri"] = "https://github.com/ULL-ESIT-LPP-1920/tdd-EduardoNuezWehbe"
+ spec.metadata["yard.run"] = "yri"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -29,9 +30,11 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0.2"
   spec.add_development_dependency "rake", "~> 12.3.3"
-  spec.add_development_dependency "true", "~> 1.0.1"
   spec.add_development_dependency "rspec", " ~> 3.9"
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "guard-bundler"
+  spec.add_development_dependency "yard"
+  spec.add_development_dependency "coveralls"
+
 end

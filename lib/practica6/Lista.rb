@@ -5,68 +5,69 @@ module Practica6
 	Nodo = Struct.new(:value,:next,:prev)
 	class Lista
 		attr_reader :head, :tail
-		def initialize (valor)
-			@head = Nodo.new(valor,nil,nil)
-			@tail = Nodo.new(nil,nil,nil)
+		def initialize 
+			@head = @tail = nil
 		end
-		def insertHead (nuevoNodo)
-			if @head.value != nil && @head.next == nil
-				valor = @head
-				@head = nuevoNodo
-				@tail = valor
-				@head.next = @tail
-				@tail.prev = @head
-			elsif @head.value != nil
-			       	valor = @head
-                                @head = nuevoNodo
-                                @head.next = valor
-                                valor.prev = @head
-                        else
-                                @head = nuevoNodo
-                        end
-		end
-		def insertTail (nuevoNodo)
-			if @tail.value != nil
-				valor = @tail
-				@tail = nuevoNodo
-				valor.next = @tail
-				@tail.prev = valor
-			else
-				@tail = nuevoNodo
-				@tail.prev = @head
-				@head.next = @tail
-				
+		def size
+			contador = 0
+			if @head[:value] != nil then
+				contador = 1
 			end
+			auxiliar = @head
+			until auxiliar[:next] == nil do
+				contador+=1
+				auxiliar = auxiliar[:next]
+			end
+			contador
+		end
+		def empty
+			if(@head ==nil)
+				true
+			elsif
+				false
+			end
+		end
+		def insert (valor)
+			nodo = Nodo.new(valor,nil)
+			if(empty)
+				@head = nodo
+				@tail = nodo
+			elsif
+				@tail.next = nodo
+				@tail = nodo
+			end
+			true
+		end
+		def extractHead
+			nodo = @head
+			if nodo != nil
+				if nodo.next != nil
+					@head = nodo.next
+				else
+					@head = nil
+					@tail = nil
+				end
+			end
+			nodo
+		end
+		def extractTail
+			auxiliar = nil
+			if @tail[:value] == nil
+				auxiliar = nil
+			else
+				auxiliar = @tail[:value]
+				@tail = @tail[:prev]
+				@@tail = nil
+			end
+			if @tail == nil
+				@tail = Nodo.new
+				@head = @tail
+			end
+			auxiliar
 		end
 		def insertVector (vector) 
-			vector.each {|n| insertTail(n)}
+			vector.each {|n| insert(n)}
 		end
-		def insertVectorHead (vector)
-			vector.each {|n| insertHead(n)}
-		end	
-			
-		def deleteTail
-			if @tail == @head
-				@tail = nil
-				@head = nil
-			elsif @tail.value != nil 			 
-				valor = @tail.prev
-				valor.next = nil
-				@tail = valor
-			end
-
-		end
-		def deleteHead
-			if @head == @tail
-				@tail = nil
-				@head = nil
-			elsif @head.value != nil
-				valor = @head.next
-				valor.prev = nil
-				@head = valor
-			end
-		end
-	
 		def getHead
                         if @head
 				return @head

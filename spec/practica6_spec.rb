@@ -50,20 +50,19 @@ describe Practica6::Alimento do
 	it 'existe un metodo que formatee el alimento a sting' do
 		expect(@nombre.to_s).to eq("")
         end
-	it 'existe un metodo que evalue si la alimentacion es buena' do
-		expect(chocolate.impactoAmbientalHombre((chocolate.getValorCalorico*4),nuez.getValorCalorico,(cerveza.getValorCalorico*2),(lecheDeVaca.getValorCalorico*3))).to eq(3018.2)
+	it 'calcula si la alimentacion es buena para un hombre' do
+		expect(((chocolate.getValorCalorico*4) + nuez.getValorCalorico + cerveza.getValorCalorico*2 + lecheDeVaca.getValorCalorico*3).round(2)).to eq(3018.2)
         end
-        it 'existe un metodo que evalue si la alimentacion es buena' do
-		expect(chocolate.impactoAmbientalMujer((chocolate.getValorCalorico*3),cafe.getValorCalorico,cerveza.getValorCalorico,lentejas.getValorCalorico)).to eq(2295.0
+        it 'calcula si la alimentacion es buena para una mujer' do
+		expect(((chocolate.getValorCalorico*3) + cafe.getValorCalorico + cerveza.getValorCalorico + lentejas.getValorCalorico).round(2)).to eq(2295.0
 )
 	end
-        it 'existe un metodo que calcule el GEI de la dieta' do
-        	expect(chocolate.calculaGEI((chocolate.getGEI*3),cafe.getGEI,cerveza.getGEI,lentejas.getGEI)).to eq(7.94)
+        it 'calcula el GEI de la dieta' do
+		expect((chocolate.getGEI*3 + cafe.getGEI + cerveza.getGEI + lentejas.getGEI).round(2)).to eq(7.94)
 
 	end
-	it 'existe un metodo que calcule el terreno de la dieta' do
-		    alimento = Practica6::Alimento.new("carne de vaca",21.1,0.0,3.1,50.0,164.0)
-expect(chocolate.calculaTerreno((chocolate.getTerreno*3),cafe.getTerreno,cerveza.getTerreno,lentejas.getTerreno)).to eq(14.12)
+	it 'calcula el terreno de la dieta' do
+		expect((chocolate.getTerreno*3 + cafe.getTerreno + cerveza.getTerreno + lentejas.getTerreno).round(2)).to eq(14.12)
 	end
 end
 
@@ -72,66 +71,62 @@ end
 ##################   PRACTICA 7 CONTINUACION  ############################
 ##########################################################################
 
-describe Practica6::Lista do
-        lista = Practica6::Lista.new(1)
-	it 'crea un objeto tipo lista' do
-    		expect(lista).to be_kind_of(Practica6::Lista)
+describe Practica6::Nodo do
+        before :all do
+		@nodo = Practica6::Nodo.new("Valor",nil)
+		@nodo1 = Practica6::Nodo.new(10,@nodo)
 	end
-	it 'crea un objeto Struct' do
-		struct = Practica6::Nodo.new(5,1,2)	
-		expect(struct).to be_kind_of(Practica6::Nodo)
-	end
-	it 'Existe un Nodo de la lista con sus datos' do
-		expect(lista).not_to eq(nil)	
-	end
-	it 'Existe un head y un tail' do
-               expect(lista.head).not_to eq(nil)
-               expect(lista.tail).not_to eq(nil)
-        end
-	it 'Existe un metodo insert head nodo' do
-		nodo = Practica6::Nodo.new(2,nil,nil)
-		valor = lista.getHead
-		lista.insertHead(nodo)
-		anterior = lista.getHead.next
-		expect(lista.getHead.next).to eq(valor)
-		expect(lista.getHead.prev).to eq(nil)
-		expect(lista.getHead.value).to eq(2)
-		expect(anterior.prev).to eq(lista.getHead)
-		expect(anterior.next).to eq(nil)
-		expect(anterior.value).to eq(1)
-	end	
-	it 'Existe un metodo insert tail nodo' do
-		nodo = Practica6::Nodo.new(3,nil,nil)
-		lista.insertTail(nodo)
-
-		lista.insertTail(Practica6::Nodo.new(4,nil,nil))
-		expect(lista.getTail.value).to eq(4)
-		expect(lista.getTail.prev.value).to eq(3)
-		expect(lista.getTail.prev.next).to eq(lista.getTail)
-	end
-	it 'Prueba de que se pueden insertar varios elementos' do
-		nodo = Practica6::Nodo.new(5,nil,nil)
-		nodo2 = Practica6::Nodo.new(6,nil,nil)
-		
-		nodoAInsertar = [nodo , nodo2]
-
-		lista.insertVector(nodoAInsertar)
-		expect(lista.getTail.value).to eq(6)
-		expect(lista.getTail.prev.value).to eq(5)
-		expect(lista.getTail.prev.prev.value).to eq(4)
-	end
-	it 'Prueba para eliminar el elemento en la ultima posicion' do
-		lista.deleteTail() #eliminamos 6 y esperamos 5
-		expect(lista.getTail.value).to eq(5)
-		expect(lista.getTail.next).to eq(nil)
-	end
-	it 'Prueba para eliminar el elemento de la primera posicion' do
-		lista.deleteHead() #eliminamos 2 y esperamos 1
-		expect(lista.getHead.value).to eq(1)
-		expect(lista.getHead.prev).to eq(nil)
+	context "#Nodo" do 
+		it 'Debe existir un Nodo de la lista con sus datos anterior y siguiente ' do
+			expect(@nodo[:value]).to eq("Valor")
+			expect(@nodo[:next]).to eq(nil)
+			expect(@nodo[:next]).to eq(nil)
+		end
+		it "Debe tener un siguiente" do 
+			expect(@nodo1.next).to eq(@nodo)
+		end
 	end
 end
 
+describe Practica6::Lista do
+	before :all do
+		@list = Practica6::Lista.new()
+		@elementos = %w(1 2 3 4 5)
+		@listaG1 = Practica6::Lista.new()
+		@lista = Practica6::Lista.new()
+
+		@lista.insert(chocolate.getValorCalorico)
+		@lista.insert(cafe.getValorCalorico)
+		@lista.insert(lentejas.getValorCalorico)
+	end
+	it "Existe un nodo head y un tail en la lista" do
+		expect(@lista.getHead).not_to eq(nil)
+		expect(@lista.getTail).not_to eq(nil)
+	end
+	it "Existe un metodo de insertar un elemento en la lista" do
+		expect(@listaG1.insert(@chocolate)).to eq(true)
+		expect(@listaG1.insert(@cafe)).to eq(true)
+		expect(@listaG1.insert(@lentejas)).to eq(true)
+		expect(@lista.insert(1)).to eq(true)
+	end
+	it 'prueba de insercion de varios elementos' do
+		i = 0
+		while i < @elementos.size-1
+			expect(@lista.insert(@elementos[i])).to eq(true)
+			i += 1
+		end
+	end
+	it "Se extrae el primer elemento de la lista" do
+		expect(@lista.extractHead.value).to eq(564.2)
+	end
+	it "Se extrae el ultimo elemento de la lista" do
+		expect(@lista.extractTail).to eq("4")
+	end
+end
+
+##########################################################################
+##################   PRACTICA 8 CONTINUACION  ############################
+##########################################################################
 
 
 
