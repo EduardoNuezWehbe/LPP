@@ -264,4 +264,34 @@ describe Practica6::PlatosA do
 	 end
 end
 
-
+describe Practica6::Platos do
+	before :all do
+		listaAlimentos = Practica6::Lista.new
+                listaAlimentos.insert(carneVaca)
+                listaAlimentos.insert(huevos)
+                listaAlimentos.insert(tofu)
+                listaAlimentos.insert(cerveza)
+                listaGramos = Practica6::Lista.new
+                listaGramos.insert(300)
+                listaGramos.insert(200)
+                listaGramos.insert(50)
+                listaGramos.insert(500)
+                @nombrePlato = "El plato del abuelo"
+                @plato = Practica6::Platos.new(@nombrePlato,listaAlimentos,listaGramos)
+		listaAlimentos = Practica6::Lista.new
+                listaAlimentos.insert(carneCordero)
+                listaAlimentos.insert(salmon)
+                listaAlimentos.insert(tofu)
+                listaAlimentos.insert(cafe)
+                listaGramos = Practica6::Lista.new
+                listaGramos.insert(300)
+                listaGramos.insert(200)
+                listaGramos.insert(50)
+                listaGramos.insert(500)
+                @nombrePlato2 = "El plato de la abuela"
+                @plato2 = Practica6::Platos.new(@nombrePlato,listaAlimentos,listaGramos)
+	end
+	it "Comprobar que el plato es mas eficiente que el plato 2" do
+		expect(plato2 < plato).to eq(true)
+	end
+end
