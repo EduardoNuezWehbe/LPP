@@ -2,6 +2,7 @@ require "practica6/version"
 
 module Practica6
 	class Platos
+		include Comparable
 		attr_reader :nombre, :listaAlimentos, :listaGramos
 		def initialize (nombr,listA,listG)
 			@nombre = nombr
@@ -66,6 +67,9 @@ module Practica6
 			output = @nombre
 			output << listaAlimentos.to_s
 			return output
+		end
+		def <=> (other)
+			getValorCaloricoTotal <=> other.getValorCaloricoTotal
 		end
 	end
 

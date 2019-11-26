@@ -291,7 +291,7 @@ describe Practica6::Platos do
                 @nombrePlato2 = "El plato de la abuela"
                 @plato2 = Practica6::Platos.new(@nombrePlato,listaAlimentos,listaGramos)
 	end
-	it "Comprobar que el plato es mas eficiente que el plato 2" do
-		expect(plato2 < plato).to eq(true)
+	it "Comprobar que el plato2 es mas eficiente que el plato 1" do
+		expect(@plato < @plato2).to eq(true)
 	end
 end
