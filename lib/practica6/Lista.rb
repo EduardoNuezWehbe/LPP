@@ -80,5 +80,15 @@ module Practica6
                         	return @tail
 			end
                 end
+		def each
+                aux = @head
+
+                puts aux.value.class
+                while(aux != nil)
+                        yield aux[:value]
+                        aux= aux[:next]
+                 end
+                end
+
 	end
 end
