@@ -260,5 +260,9 @@ describe Practica6::PlatosA do
 	end
 	it"Valor total de a emisiones diarias de gases de efecto invernadero" do
 		expect(@platoA.getEmisionGEI).to eq(1.2)
-	end	
+	end
+	 it"Valor total del terreno ocupado" do
+                expect(@platoA.getTerreno).to eq(1.2)
+        end
+	
 end
