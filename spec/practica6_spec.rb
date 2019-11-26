@@ -225,6 +225,10 @@ describe Practica6::Platos do
                 @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.getCarbohidratos).to eq(4.0)
 	end
+	it"Existe un metodo que calcule el valor calorico total del plato" do
+		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+                expect(@plato.getValorCaloricoTotal).to eq(4.0)
+	end
 	
 
 end
