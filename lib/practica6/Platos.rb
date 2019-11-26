@@ -34,6 +34,18 @@ module Practica6
                         end
                         return ((lipidos * 100)/gramosTotales).round(2)
                 end
-
+		def getCarbohidratos
+                        aux = listaAlimentos.head
+                        aux2 = listaGramos.head
+                        carbohidratos = 0
+                        gramosTotales = 0
+                        while aux != nil && listaGramos != nil
+                                carbohidratos += aux.value.carbohidratos * (aux2.value/100)
+                                gramosTotales = aux2.value
+                                aux = aux.next
+                                aux2 = aux2.next
+                        end
+                        return ((carbohidratos * 100)/gramosTotales).round(2)
+                end
 	end
 end

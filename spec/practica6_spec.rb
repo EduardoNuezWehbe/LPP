@@ -223,7 +223,7 @@ describe Practica6::Platos do
 	end
 	it"Existe un metodo que devuelva el % de los carbohidratos del plato" do
                 @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
-                expect(@plato.getCarbohidratos).to eq(6.26)
+		expect(@plato.getCarbohidratos).to eq(4.0)
 	end
 	
 
