@@ -213,6 +213,10 @@ describe Practica6::Platos do
 	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.listaGramos).not_to eq(nil)
 	end
+	it"Existe un metodo que devuelve las proteinas del plato" do
+	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+		expect(@plato.getProteinas).to eq(95.8)
+	end
 end
 
 
