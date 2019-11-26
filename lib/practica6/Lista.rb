@@ -29,13 +29,14 @@ module Practica6
 			end
 		end
 		def insert (valor)
-			nodo = Nodo.new(valor,nil)
+			nodo = Nodo.new(valor)
 			if(empty)
 				@head = nodo
 				@tail = nodo
 			elsif
 				@tail.next = nodo
-				@tail = nodo
+				nodo.prev = @tail
+				@tail = nodo	
 			end
 			true
 		end

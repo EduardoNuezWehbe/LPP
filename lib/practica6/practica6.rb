@@ -41,7 +41,7 @@ module Practica6
 		return s
 	end
 	def <=> (other)
-        getValorCalorico <=> other.getValorCalorico
+        	getValorCalorico<=>other.getValorCalorico
         end
   end
 end

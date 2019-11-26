@@ -147,3 +147,14 @@ RSpec.describe Practica6::Alimento do
 	end
 end
 
+describe Practica6::Lista do
+
+	@listaPrueba = Practica6::Lista.new()
+	@listaPrueba.insert(lentejas.getValorCalorico)
+	@listaPrueba.insert(cafe.getValorCalorico)
+	puts @listaPrueba.head.value.class
+	it "Obtenemos el max" do
+		auxiliar = @listaPrueba.max
+		expect(auxiliar).to eq(567.6)
+	end
+end
