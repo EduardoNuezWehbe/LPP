@@ -197,12 +197,17 @@ describe Practica6::Platos do
         listaGramos.insert(50)
         listaGramos.insert(500)
         nombrePlato = "El plato del abuelo"
+        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 	it "Existe un objeto plato" do
                 expect(Practica6::Platos.new(nil,nil,nil)).to be_kind_of(Practica6::Platos)
         end
 	it"Existe el nombre de un plato" do
-	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.nombre).to eq(nombrePlato)
+	end
+	it"Existe un conjunto de alimentos" do
+	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+		expect(@plato.listaAlimentos).not_to eq(nil)
 	end
 end
 
