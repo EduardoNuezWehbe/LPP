@@ -221,6 +221,10 @@ describe Practica6::Platos do
 		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.getLipidos).to eq(6.26)
 	end
+	it"Existe un metodo que devuelva el % de los carbohidratos del plato" do
+                @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+                expect(@plato.getCarbohidratos).to eq(6.26)
+	end
 	
 
 end
