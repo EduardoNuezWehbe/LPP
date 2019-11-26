@@ -262,7 +262,7 @@ describe Practica6::PlatosA do
 		expect(@platoA.getEmisionGEI).to eq(1.2)
 	end
 	 it"Valor total del terreno ocupado" do
-                expect(@platoA.getTerreno).to eq(1.2)
+                expect(@platoA.getTerreno).to eq(1.1)
         end
 	
 end

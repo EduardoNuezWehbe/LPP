@@ -86,5 +86,18 @@ module Practica6
 			end
 			return geiTotal.round(2)
 		end
+		def getTerreno
+                        aux = listaAlimentos.head
+                        aux2 = listaGramos.head
+
+                        terrenoTotal = 0
+                        while aux != nil && aux2 != nil
+                                terrenoTotal = aux.value.terreno * (aux2.value/100)
+                                aux = aux.next
+                                aux2 = aux2.next
+                        end
+                        return terrenoTotal.round(2)
+                end
+
 	end
 end
