@@ -297,4 +297,8 @@ describe Practica6::Platos do
 	it "Comprobar si el plato es mas eficiente que el plato2" do
 		expect(@plato > @plato2).to eq(false)
 	end
+	it "Comprobar si el = funciona" do
+		expect(@plato == @plato2).to eq(false)
+		expect(@plato == @plato).to eq(true)
+	end
 end
