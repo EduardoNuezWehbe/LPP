@@ -238,20 +238,24 @@ end
 
 
 describe Practica6::PlatosA do
-
-	listaAlimentos = Practica6::Lista.new
-        listaAlimentos.insert(carneVaca)
-        listaAlimentos.insert(huevos)
-        listaAlimentos.insert(tofu)
-        listaAlimentos.insert(cerveza)
-        listaGramos = Practica6::Lista.new
-        listaGramos.insert(300)
-        listaGramos.insert(200)
-        listaGramos.insert(50)
-        listaGramos.insert(500)
-        nombrePlato = "El plato del abuelo"
-
+	before :all do
+		listaAlimentos = Practica6::Lista.new
+	        listaAlimentos.insert(carneVaca)
+		listaAlimentos.insert(huevos)
+       		listaAlimentos.insert(tofu)
+       		listaAlimentos.insert(cerveza)
+        	listaGramos = Practica6::Lista.new
+        	listaGramos.insert(300)
+        	listaGramos.insert(200)
+        	listaGramos.insert(50)
+        	listaGramos.insert(500)
+        	nombrePlato = "El plato del abuelo"
+		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+	end
 	it"Existe una instancia de Plato" do
 		expect(Practica6::PlatosA.new(nil,nil,nil)).to be_an_instance_of(Practica6::PlatosA)
 	end
+	it"Clase PlatosA es un objeto que es subclase de Platos" do
+		expect(Practica6::PlatosA.new(nil,nil,nil)).to be_kind_of(Practica6::Platos)
+	end	
 end
