@@ -41,42 +41,7 @@ module Practica6
 		return s
 	end
 	def <=> (other)
-		if @proteinas == other.proteinas
-			if @carbohidratos == other.carbohidratos
-				if @lipidos == other.lipidos
-					if @GEI == other.GEI
-						if @terreno == other.terreno
-							return 0
-						elsif
-							terreno > other.terreno
-							return 1
-						else
-							return -1
-						end
-					elsif
-						@GEI > other.GEI
-						return 1
-					else
-						return -1
-					end
-				elsif
-					lipidos > other.lipidos
-					return 1
-				else
-					return -1
-				end
-			elsif
-				carbohidratos > other.carbohidratos
-				return 1
-			else
-				return -1
-			end
-		elsif
-			proteinas > other.proteinas
-			return 1
-		else
-			return -1
-		end
-	end
+        getValorCalorico <=> other.getValorCalorico
+        end
   end
 end

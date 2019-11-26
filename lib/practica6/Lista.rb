@@ -4,6 +4,7 @@ require "practica6/version"
 module Practica6
 	Nodo = Struct.new(:value,:next,:prev)
 	class Lista
+		include Enumerable
 		attr_reader :head, :tail
 		def initialize 
 			@head = @tail = nil

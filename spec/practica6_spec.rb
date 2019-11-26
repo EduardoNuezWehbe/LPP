@@ -147,14 +147,3 @@ RSpec.describe Practica6::Alimento do
 	end
 end
 
-RSsec.describe Practica6::Lista do
-	@lista = Practica6::Lista.new()
-	@lista.insert(@cafe.getValorCalorico)
-	@lista.insert(@carneVaca.getValorCalorico)
-	@lista.insert(@lentejas.getValorCalorico)
-	context "#Enumerable en lista de alimentos" do
-		it"Valor energetico max" do
-			expect(@lista.max).to eq(571.8)
-		end
-	end
-end
