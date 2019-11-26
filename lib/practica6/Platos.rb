@@ -8,5 +8,16 @@ module Practica6
 			@listaAlimentos = listA
 			@listaGramos = listG
 		end
+		def getProteinas
+			aux = listaAlimentos.head
+			aux2 = listaGramos.head
+			proteinas = 0
+			while aux != nil && listaGramos != nil
+				proteinas += aux.value.proteinas * (aux2.value/100)
+				aux = aux.next
+				aux2 = aux2.next
+			end
+			return proteinas.round(2)
+		end
 	end
 end

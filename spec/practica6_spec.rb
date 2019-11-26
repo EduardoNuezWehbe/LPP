@@ -215,7 +215,7 @@ describe Practica6::Platos do
 	end
 	it"Existe un metodo que devuelve las proteinas del plato" do
 	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
-		expect(@plato.getProteinas).to eq(95.8)
+		expect(@plato.getProteinas).to eq(91.8)
 	end
 end
 
