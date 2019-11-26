@@ -227,7 +227,7 @@ describe Practica6::Platos do
 	end
 	it"Existe un metodo que calcule el valor calorico total del plato" do
 		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
-                expect(@plato.getValorCaloricoTotal).to eq(4.0)
+		expect(@plato.getValorCaloricoTotal).to eq(672.4)
 	end
 	
 

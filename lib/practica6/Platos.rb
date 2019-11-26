@@ -47,5 +47,20 @@ module Practica6
                         end
                         return ((carbohidratos * 100)/gramosTotales).round(2)
                 end
+		def getGramosTotales
+			aux = listaGramos.head
+			gramosTotales = 0
+			while aux != nil
+				gramosTotales = aux.value
+				aux = aux.next
+			end
+			return gramosTotales
+		end
+		def getValorCaloricoTotal
+			proteinas = (getProteinas * getGramosTotales)/100
+			carbohidratos = (getCarbohidratos * getGramosTotales)/100
+			lipidos = (getLipidos * getGramosTotales)/100
+			return (proteinas*4+carbohidratos*9+lipidos*4).round(2)
+		end
 	end
 end
