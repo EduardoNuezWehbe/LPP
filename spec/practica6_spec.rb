@@ -135,6 +135,9 @@ RSpec.describe Practica6::Alimento do
 		it"Comparando operador < " do
 			expect(cafe<lentejas).to eq(true)
 		end
+		it"Comparando operador > " do
+			expect(cafe>lentejas).to eq(false)
+		end
 	end
 end
 
