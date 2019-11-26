@@ -184,54 +184,47 @@ describe Practica6::Lista do
 end
 
 describe Practica6::Platos do	
-	listaAlimentos = Practica6::Lista.new
+	before :all do
+                listaAlimentos = Practica6::Lista.new
+                listaAlimentos.insert(carneVaca)
+                listaAlimentos.insert(huevos)
+                listaAlimentos.insert(tofu)
+                listaAlimentos.insert(cerveza)
+                listaGramos = Practica6::Lista.new
+                listaGramos.insert(300)
+                listaGramos.insert(200)
+                listaGramos.insert(50)
+                listaGramos.insert(500)
+                @nombrePlato = "El plato del abuelo"
+                @plato = Practica6::Platos.new(@nombrePlato,listaAlimentos,listaGramos)
+        end
 
-        listaAlimentos.insert(carneVaca)
-        listaAlimentos.insert(huevos)
-        listaAlimentos.insert(tofu)
-        listaAlimentos.insert(cerveza)
-
-        listaGramos = Practica6::Lista.new
-        listaGramos.insert(300)
-        listaGramos.insert(200)
-        listaGramos.insert(50)
-        listaGramos.insert(500)
-        nombrePlato = "El plato del abuelo"
-        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 	it "Existe un objeto plato" do
                 expect(Practica6::Platos.new(nil,nil,nil)).to be_kind_of(Practica6::Platos)
         end
 	it"Existe el nombre de un plato" do
-		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
-		expect(@plato.nombre).to eq(nombrePlato)
+		expect(@plato.nombre).to eq(@nombrePlato)
 	end
 	it"Existe un conjunto de alimentos" do
-	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.listaAlimentos).not_to eq(nil)
 	end
 	it"Existe un conjunto de cantidades" do
-	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.listaGramos).not_to eq(nil)
 	end
 	it"Existe un metodo que devuelve el % de las proteinas del plato" do
-	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.getProteinas).to eq(18.36)
 	end
 	it"Existe un metodo que devuelva el % de los lipidos del plato" do
-		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.getLipidos).to eq(6.26)
 	end
 	it"Existe un metodo que devuelva el % de los carbohidratos del plato" do
-                @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.getCarbohidratos).to eq(4.0)
 	end
 	it"Existe un metodo que calcule el valor calorico total del plato" do
-		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.getValorCaloricoTotal).to eq(672.4)
 	end
 	it"Existe un metodo to_s" do
-		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
-        	out = "El plato del abuelo{\ncarne de vaca: 21.1 · 0.0 · 3.1 · 50.0 · 164.0\nhuevos: 13.0 · 1.0 · 11.0 · 4.2 · 5.7\ntofu: 8.0 · 1.9 · 4.8 · 2.0 · 2.2\ncerveza: 0.5 · 3.6 · 0.0 · 0.24 · 0.22\n}"
+		out = "El plato del abuelo{\ncarne de vaca: 21.1 · 0.0 · 3.1 · 50.0 · 164.0\nhuevos: 13.0 · 1.0 · 11.0 · 4.2 · 5.7\ntofu: 8.0 · 1.9 · 4.8 · 2.0 · 2.2\ncerveza: 0.5 · 3.6 · 0.0 · 0.24 · 0.22\n}"
 		expect(@plato.to_s).to eq(out)
 	end
 end
@@ -265,8 +258,10 @@ describe Practica6::PlatosA do
                 expect(@platoA.getTerreno).to eq(1.1)
         end
 	 it"Eficiencia energetica formateada" do
-		 output = 672.4
+		 output = "Eficiencia energetica: 672.4El plato del abuelo{\ncarne de vaca: 21.1 · 0.0 · 3.1 · 50.0 · 164.0\nhuevos: 13.0 · 1.0 · 11.0 · 4.2 · 5.7\ntofu: 8.0 · 1.9 · 4.8 · 2.0 · 2.2\ncerveza: 0.5 · 3.6 · 0.0 · 0.24 · 0.22\n}" 
+
 		 expect(@platoA.to_s).to eq(output)
 	 end
 end
+
 

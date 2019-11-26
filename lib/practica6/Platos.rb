@@ -99,8 +99,7 @@ module Practica6
                         return terrenoTotal.round(2)
                 end
 		def to_s
-			output = getValorCaloricoTotal
-			return output
+			 "Eficiencia energetica: #{getValorCaloricoTotal}" + super
 		end
 	end
 end
