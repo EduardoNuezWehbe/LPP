@@ -174,6 +174,11 @@ describe Practica6::Lista do
 	it"Comprobar una Collect" do
 		array = [nil,nil,nil]
 		expect((1..3).collect {}).to eq(array)
-		end
+	end
+	temp1 = [485.0]	
+	temp2 = @listaPrueba.select { |n| n % 2 == 1 }
+	it "Comprobar una condicion de la lista" do
+		expect(temp2).to eq (temp1)
 
-end 
+	end
+end	
