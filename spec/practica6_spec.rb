@@ -170,4 +170,10 @@ describe Practica6::Lista do
 	it "Ordenamos con sort" do
 		 expect(temp).to eq(ordenado)
 	end
+	
+	it"Comprobar una Collect" do
+		array = [nil,nil,nil]
+		expect((1..3).collect {}).to eq(array)
+		end
+
 end 
