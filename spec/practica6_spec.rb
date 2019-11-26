@@ -184,9 +184,9 @@ describe Practica6::Lista do
 end
 
 describe Practica6::Platos do
-	@plato = Practica6::Platos.new
-	it "Existe un objeto plato" do
-		expect(@plato).to be_kind_of(Practica6::Platos)
+	
+	it "Existe un objeto plato" do	
+		expect(Practica6::Platos.new).to be_kind_of(Practica6::Platos)
 	end
 end
 
