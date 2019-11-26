@@ -152,9 +152,12 @@ describe Practica6::Lista do
 	@listaPrueba = Practica6::Lista.new()
 	@listaPrueba.insert(lentejas.getValorCalorico)
 	@listaPrueba.insert(cafe.getValorCalorico)
-	puts @listaPrueba.head.value.class
+	auxiliar = @listaPrueba.max
 	it "Obtenemos el max" do
-		auxiliar = @listaPrueba.max
 		expect(auxiliar).to eq(567.6)
 	end
-end
+	auxiliar2 = @listaPrueba.min
+	it "obtenemos el min" do
+		expect(auxiliar2).to eq(0.4)
+	end
+end 
