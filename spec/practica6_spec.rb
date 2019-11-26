@@ -1,4 +1,4 @@
-require './lib/practica6.rb'
+require './lib/practica6/practica6.rb'
 
 
 alimento = Practica6::Alimento.new("carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
@@ -22,59 +22,37 @@ alimentos = [carneVaca, carneCordero, camarones, chocolate, salmon, cerdo, pollo
                lecheDeVaca, huevos, cafe, tofu, lentejas, nuez]
 
 describe Practica6::Alimento do
-  it 'crea un objeto tipo alimento' do
-    expect(alimento).to be_kind_of(Practica6::Alimento)
-  end
-
-end
-describe Practica6::Alimento do
-        
+  	it 'crea un objeto tipo alimento' do
+    		expect(alimento).to be_kind_of(Practica6::Alimento)
+  	end
 	it 'existe un nombre para el alimento' do
                 expect(alimento).to have_attributes(:nombre => "carne de vaca")
         end
-end
-describe Practica6::Alimento do
         it 'existe una cantidad de emision gases efecto invernadero' do
 		expect(alimento).to have_attributes(:GEI => 50.0)
         end
-end
-describe Practica6::Alimento do
         it 'existe una cantidad de terreno utilizado en metro cuadrado' do
 		expect(alimento).to have_attributes(:terreno => 164.0)
         end
-end
-describe Practica6::Alimento do
         it 'existe un metodo que devuelva el nombre del alimento' do
 		expect(alimento.getNombre).to eq("carne de vaca")
         end
-end
-describe Practica6::Alimento do
         it 'existe un metodo que devuelva el gas de efecto invernadero' do
 		expect(alimento.getGEI).to eq(50.0)
         end
-end
-describe Practica6::Alimento do
         it 'existe un metodo que devuelva la cantidad de terreno utilizado en metro cuadrado' do
 		expect(alimento.getTerreno).to eq(164.0)
         end
-end
-describe Practica6::Alimento do
         it 'existe un metodo que calcule el valor calorico de un alimento' do
-		expect(alimento.getValorCalorico).to eq(96.8)
-        end
-end
-describe Practica6::Alimento do
+	expect(alimento.getValorCalorico).to eq(96.8)
 	@nombre = Practica6::Alimento.new(nil,nil,nil,nil,nil,nil)
-      	it 'existe un metodo que formatee el alimento a sting' do
+	end
+	it 'existe un metodo que formatee el alimento a sting' do
 		expect(@nombre.to_s).to eq("")
         end
-end
-describe Practica6::Alimento do
 	it 'existe un metodo que evalue si la alimentacion es buena' do
 		expect(chocolate.impactoAmbientalHombre((chocolate.getValorCalorico*4),nuez.getValorCalorico,(cerveza.getValorCalorico*2),(lecheDeVaca.getValorCalorico*3))).to eq(3018.2)
         end
-end
-describe Practica6::Alimento do
         it 'existe un metodo que evalue si la alimentacion es buena' do
 		expect(chocolate.impactoAmbientalMujer((chocolate.getValorCalorico*3),cafe.getValorCalorico,cerveza.getValorCalorico,lentejas.getValorCalorico)).to eq(2295.0
 )
