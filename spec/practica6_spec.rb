@@ -265,7 +265,7 @@ describe Practica6::PlatosA do
                 expect(@platoA.getTerreno).to eq(1.1)
         end
 	 it"Eficiencia energetica formateada" do
-		 output = "hola"
+		 output = 672.4
 		 expect(@platoA.to_s).to eq(output)
 	 end
 end

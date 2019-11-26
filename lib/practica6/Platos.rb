@@ -98,5 +98,9 @@ module Practica6
                         end
                         return terrenoTotal.round(2)
                 end
+		def to_s
+			output = getValorCaloricoTotal
+			return output
+		end
 	end
 end
