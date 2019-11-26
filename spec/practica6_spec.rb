@@ -259,6 +259,6 @@ describe Practica6::PlatosA do
 		expect(Practica6::PlatosA.new(nil,nil,nil)).to be_kind_of(Practica6::Platos)
 	end
 	it"Valor total de a emisiones diarias de gases de efecto invernadero" do
-		expect(@platoA.getEmisionGEI).to eq(20.0)
+		expect(@platoA.getEmisionGEI).to eq(1.2)
 	end	
 end

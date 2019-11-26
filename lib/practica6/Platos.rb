@@ -71,5 +71,20 @@ module Practica6
 
 
 	class PlatosA < Platos
+		def initialize (nombre,listA,listG)
+			super(nombre,listA,listG)
+		end
+		def getEmisionGEI 
+			aux = listaAlimentos.head
+			aux2 = listaGramos.head
+
+			geiTotal = 0
+			while aux != nil && aux2 != nil
+				geiTotal = aux.value.GEI * (aux2.value/100)
+				aux = aux.next
+				aux2 = aux2.next
+			end
+			return geiTotal.round(2)
+		end
 	end
 end
