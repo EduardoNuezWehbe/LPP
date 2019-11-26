@@ -234,8 +234,11 @@ describe Practica6::Platos do
         	out = "El plato del abuelo{\ncarne de vaca: 21.1 · 0.0 · 3.1 · 50.0 · 164.0\nhuevos: 13.0 · 1.0 · 11.0 · 4.2 · 5.7\ntofu: 8.0 · 1.9 · 4.8 · 2.0 · 2.2\ncerveza: 0.5 · 3.6 · 0.0 · 0.24 · 0.22\n}"
 		expect(@plato.to_s).to eq(out)
 	end
-	
-
 end
 
 
+describe Practica6::PlatosA do
+	it"Existe una instancia de Plato" do
+		expect(Practica6::PlatosA.new).to be_an_instance_of(Practica6::PlatosA)
+	end
+end
