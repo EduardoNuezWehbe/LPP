@@ -1,4 +1,4 @@
-
+require "./lib/practica6/Platos.rb"
 require "spec_helper"
 require "./lib/practica6/Lista.rb"
 require "./lib/practica6/practica6.rb"
@@ -181,4 +181,13 @@ describe Practica6::Lista do
 		expect(temp2).to eq (temp1)
 
 	end
-end	
+end
+
+describe Practica6::Platos do
+	@plato = Practica6::Platos.new
+	it "Existe un objeto plato" do
+		expect(@plato).to be_kind_of(Practica6::Platos)
+	end
+end
+
+
