@@ -238,7 +238,20 @@ end
 
 
 describe Practica6::PlatosA do
+
+	listaAlimentos = Practica6::Lista.new
+        listaAlimentos.insert(carneVaca)
+        listaAlimentos.insert(huevos)
+        listaAlimentos.insert(tofu)
+        listaAlimentos.insert(cerveza)
+        listaGramos = Practica6::Lista.new
+        listaGramos.insert(300)
+        listaGramos.insert(200)
+        listaGramos.insert(50)
+        listaGramos.insert(500)
+        nombrePlato = "El plato del abuelo"
+
 	it"Existe una instancia de Plato" do
-		expect(Practica6::PlatosA.new).to be_an_instance_of(Practica6::PlatosA)
+		expect(Practica6::PlatosA.new(nil,nil,nil)).to be_an_instance_of(Practica6::PlatosA)
 	end
 end

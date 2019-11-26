@@ -68,4 +68,8 @@ module Practica6
 			return output
 		end
 	end
+
+
+	class PlatosA < Platos
+	end
 end
