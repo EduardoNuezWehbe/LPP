@@ -219,8 +219,7 @@ describe Practica6::Platos do
 	end
 	it"Existe un metodo que devuelva el % de los lipidos del plato" do
 		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
-                expect(@plato.getLipidos).to eq(18.36)
-
+		expect(@plato.getLipidos).to eq(6.26)
 	end
 	
 
