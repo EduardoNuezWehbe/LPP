@@ -250,12 +250,15 @@ describe Practica6::PlatosA do
         	listaGramos.insert(50)
         	listaGramos.insert(500)
         	nombrePlato = "El plato del abuelo"
-		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+		@platoA = Practica6::PlatosA.new(nombrePlato,listaAlimentos,listaGramos)
 	end
 	it"Existe una instancia de Plato" do
 		expect(Practica6::PlatosA.new(nil,nil,nil)).to be_an_instance_of(Practica6::PlatosA)
 	end
 	it"Clase PlatosA es un objeto que es subclase de Platos" do
 		expect(Practica6::PlatosA.new(nil,nil,nil)).to be_kind_of(Practica6::Platos)
+	end
+	it"Valor total de a emisiones diarias de gases de efecto invernadero" do
+		expect(@platoA.getEmisionGEI).to eq(20.0)
 	end	
 end
