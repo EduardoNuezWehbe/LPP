@@ -264,5 +264,9 @@ describe Practica6::PlatosA do
 	 it"Valor total del terreno ocupado" do
                 expect(@platoA.getTerreno).to eq(1.1)
         end
-	
+	 it"Eficiencia energetica formateada" do
+		 output = "hola"
+		 expect(@platoA.to_s).to eq(output)
+	 end
 end
+

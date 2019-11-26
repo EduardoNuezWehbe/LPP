@@ -98,6 +98,5 @@ module Practica6
                         end
                         return terrenoTotal.round(2)
                 end
-
 	end
 end
