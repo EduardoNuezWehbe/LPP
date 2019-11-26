@@ -1,5 +1,7 @@
-require './lib/practica6/practica6.rb'
 
+require "spec_helper"
+require "./lib/practica6/Lista.rb"
+require "./lib/practica6/practica6.rb"
 
 alimento = Practica6::Alimento.new("carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
 carneVaca = Practica6::Alimento.new("carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
@@ -88,7 +90,7 @@ describe Practica6::Nodo do
 	end
 end
 
-describe Practica6::Lista do
+RSpec.describe Practica6::Lista do
 	before :all do
 		@list = Practica6::Lista.new()
 		@elementos = %w(1 2 3 4 5)
@@ -128,6 +130,11 @@ end
 ##################   PRACTICA 8 CONTINUACION  ############################
 ##########################################################################
 
-
-
+RSpec.describe Food do
+	context "#Clase Alimento comparable: " do
+		it"Comparando operador < " do
+			expect(cafe<lentejas).to eq(true)
+		end
+	end
+end
 
