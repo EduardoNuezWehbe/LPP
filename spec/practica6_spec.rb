@@ -209,6 +209,10 @@ describe Practica6::Platos do
 	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.listaAlimentos).not_to eq(nil)
 	end
+	it"Existe un conjunto de cantidades" do
+	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+		expect(@plato.listaGramos).not_to eq(nil)
+	end
 end
 
 
