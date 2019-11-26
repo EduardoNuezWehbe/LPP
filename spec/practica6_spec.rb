@@ -229,6 +229,10 @@ describe Practica6::Platos do
 		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
 		expect(@plato.getValorCaloricoTotal).to eq(672.4)
 	end
+	it"Existe un metodo to_s" do
+		@plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+                expect(@plato.to_s).to eq(out)
+	end
 	
 
 end
