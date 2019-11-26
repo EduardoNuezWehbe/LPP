@@ -152,6 +152,8 @@ describe Practica6::Lista do
 	@listaPrueba = Practica6::Lista.new()
 	@listaPrueba.insert(lentejas.getValorCalorico)
 	@listaPrueba.insert(cafe.getValorCalorico)
+	@listaPrueba.insert(tofu.getValorCalorico)
+	@listaPrueba.insert(nuez.getValorCalorico)
 	auxiliar = @listaPrueba.max
 	it "Obtenemos el max" do
 		expect(auxiliar).to eq(567.6)
@@ -159,5 +161,13 @@ describe Practica6::Lista do
 	auxiliar2 = @listaPrueba.min
 	it "obtenemos el min" do
 		expect(auxiliar2).to eq(0.4)
+	end
+	
+	ordenado = [cafe.getValorCalorico,tofu.getValorCalorico,nuez.getValorCalorico,lentejas.getValorCalorico]
+
+	temp = []
+	temp = @listaPrueba.sort
+	it "Ordenamos con sort" do
+		 expect(temp).to eq(ordenado)
 	end
 end 
