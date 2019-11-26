@@ -62,5 +62,10 @@ module Practica6
 			lipidos = (getLipidos * getGramosTotales)/100
 			return (proteinas*4+carbohidratos*9+lipidos*4).round(2)
 		end
+		def to_s
+			output = @nombre
+			output << listaAlimentos.to_s
+			return output
+		end
 	end
 end

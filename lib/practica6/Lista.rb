@@ -89,6 +89,15 @@ module Practica6
                         aux= aux[:next]
                  end
                 end
-
+		def to_s
+			toprint = "{\n"
+			node = @head
+			while(node != nil) do
+				toprint += "#{node.value.to_s}\n"
+				node = node.next
+			end
+			toprint += "}"
+			return toprint
+		end
 	end
 end
