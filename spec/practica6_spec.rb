@@ -183,26 +183,26 @@ describe Practica6::Lista do
 	end
 end
 
-describe Practica6::Platos do
-	
-	it "Existe un objeto plato" do	
-		expect(Practica6::Platos.new).to be_kind_of(Practica6::Platos)
-	end
+describe Practica6::Platos do	
 	listaAlimentos = Practica6::Lista.new
 
-	listaAlimentos.insert(carneVaca)
-	listaAlimentos.insert(huevos)
-	listaAlimentos.insert(tofu)
-	listaAlimentos.insert(cerveza)
+        listaAlimentos.insert(carneVaca)
+        listaAlimentos.insert(huevos)
+        listaAlimentos.insert(tofu)
+        listaAlimentos.insert(cerveza)
 
-	listaGramos = Practica6::Lista.new
-	listaGramos.insert(300)
-	listaGramos.insert(200)
-	listaGramos.insert(50)
-	listaGramos.insert(500)	
-	@plato = Practica6::Platos.new ("El plato del abuelo",listaAlimentos,listaGramos)
+        listaGramos = Practica6::Lista.new
+        listaGramos.insert(300)
+        listaGramos.insert(200)
+        listaGramos.insert(50)
+        listaGramos.insert(500)
+        nombrePlato = "El plato del abuelo"
+	it "Existe un objeto plato" do
+                expect(Practica6::Platos.new(nil,nil,nil)).to be_kind_of(Practica6::Platos)
+        end
 	it"Existe el nombre de un plato" do
-		expect(@plato.nombre).to eq("El plato del abuelo")
+	        @plato = Practica6::Platos.new(nombrePlato,listaAlimentos,listaGramos)
+		expect(@plato.nombre).to eq(nombrePlato)
 	end
 end
 
