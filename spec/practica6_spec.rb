@@ -139,7 +139,10 @@ RSpec.describe Practica6::Alimento do
 			expect(cafe>lentejas).to eq(false)
 		end
 		it"Comparando operador == para que falle" do
-			expect(cafe==lentejas).to eq(true)
+			expect(cafe==lentejas).to eq(false)
+		end
+		it"Comparando operador == para que acierte" do
+			expect(cafe==cafe).to eq(true)
 		end
 	end
 end
