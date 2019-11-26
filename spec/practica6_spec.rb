@@ -130,7 +130,7 @@ end
 ##################   PRACTICA 8 CONTINUACION  ############################
 ##########################################################################
 
-RSpec.describe Food do
+RSpec.describe Practica6::Alimento do
 	context "#Clase Alimento comparable: " do
 		it"Comparando operador < " do
 			expect(cafe<lentejas).to eq(true)

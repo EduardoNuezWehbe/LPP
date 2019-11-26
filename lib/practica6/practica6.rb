@@ -2,6 +2,7 @@ require "practica6/version.rb"
 require "practica6/Lista.rb"
 module Practica6
   class Alimento
+	  include Comparable
 	   attr_reader :nombre, :proteinas, :carbohidratos, :lipidos, :GEI, :terreno
         def initialize(nombre,proteinas,carbohidratos,lipidos,gei,terreno)
                 @nombre = nombre.to_s
@@ -38,6 +39,44 @@ module Practica6
 	def to_s
 		s ="#{@nombre}: #{@proteinas} · #{@carbohidratos} · #{@lipidos} · #{@GEI} · #{@terreno}"
 		return s
+	end
+	def <=> (other)
+		if @proteinas == other.proteinas
+			if @carbohidratos == other.carbohidratos
+				if @lipidos == other.lipidos
+					if @GEI == other.GEI
+						if @terreno == other.terreno
+							return 0
+						elsif
+							terreno > other.terreno
+							return 1
+						else
+							return -1
+						end
+					elsif
+						@GEI > other.GEI
+						return 1
+					else
+						return -1
+					end
+				elsif
+					lipidos > other.lipidos
+					return 1
+				else
+					return -1
+				end
+			elsif
+				carbohidratos > other.carbohidratos
+				return 1
+			else
+				return -1
+			end
+		elsif
+			proteinas > other.proteinas
+			return 1
+		else
+			return -1
+		end
 	end
   end
 end
