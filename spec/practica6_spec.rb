@@ -381,7 +381,15 @@ describe Practica6::Platos do
 		dietaVegetarianaCantidad.insert(100)
 		dietaVegetarianaCantidad.insert(185)
 		dietaVegetarianaCantidad.insert(200)
+		
+		@platoEspañol = Practica6::Platos.new("Plato Español",dietaEspañolaAlimentos,dietaEspañolaCantidad)
+	        @platoVasco = Practica6::Platos.new("Plato Vasco",dietaVascaAlimentos,dietaVascaCantidad)
+	        @platoVegetariano = Practica6::Platos.new("Plato Vegetariano",dietaVegetarianaAlimentos,dietaVegetarianaCantidad)
+	        @platoVegetaliano = Practica6::Platos.new("Plato Vegetaliano",dietaVegetalianaAlimentos,dietaVegetalianaCantidad)
+	        @platoCarnivoro = Practica6::Platos.new("Plato Carnivoro",dietaCarnivoraAlimentos,dietaCarnivorCantidad)
+
 	end
+
 end
 
 
