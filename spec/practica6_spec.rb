@@ -399,6 +399,9 @@ describe Practica6::Platos do
 	it "plato vegetariano mas eficiente que plato carnivoro" do
 		expect(@platoCarnivoro < @platoVegetariano).to eq(true)
 	end
+	it "plato vegetaliano peor que plato Vasco" do
+		expect(@platoVegetaliano > @platoVasco).to eq(false)
+	end
 end
 
 
