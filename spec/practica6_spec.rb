@@ -381,15 +381,24 @@ describe Practica6::Platos do
 		dietaVegetarianaCantidad.insert(100)
 		dietaVegetarianaCantidad.insert(185)
 		dietaVegetarianaCantidad.insert(200)
-		
-		@platoEspañol = Practica6::Platos.new("Plato Español",dietaEspañolaAlimentos,dietaEspañolaCantidad)
-	        @platoVasco = Practica6::Platos.new("Plato Vasco",dietaVascaAlimentos,dietaVascaCantidad)
-	        @platoVegetariano = Practica6::Platos.new("Plato Vegetariano",dietaVegetarianaAlimentos,dietaVegetarianaCantidad)
-	        @platoVegetaliano = Practica6::Platos.new("Plato Vegetaliano",dietaVegetalianaAlimentos,dietaVegetalianaCantidad)
-	        @platoCarnivoro = Practica6::Platos.new("Plato Carnivoro",dietaCarnivoraAlimentos,dietaCarnivorCantidad)
+	
+
+		@nombre1 = "Plato español"
+		@nombre2 = "Plato vasco"
+		@nombre3 = "Plato vegetariano"
+		@nombre4 = "Plato vegetaliano"
+		@nombre5 = "Plato carnivoro"
+
+		@platoEspañol = Practica6::Platos.new(@nombre1,dietaEspañolaAlimentos,dietaEspañolaCantidad)
+	        @platoVasco = Practica6::Platos.new(@nombre2,dietaVascaAlimentos,dietaVascaCantidad)
+	        @platoVegetariano = Practica6::Platos.new(@nombre3,dietaVegetarianaAlimentos,dietaVegetarianaCantidad)
+	        @platoVegetaliano = Practica6::Platos.new(@nombre4,dietaVegetalianaAlimentos,dietaVegetalianaCantidad)
+	        @platoCarnivoro = Practica6::Platos.new(@nombre5,dietaCarnivoraAlimentos,dietaCarnivoraCantidad)
 
 	end
-
+	it "plato vegetariano mas eficiente que plato carnivoro" do
+		expect(@platoCarnivoro < @platoVegetariano).to eq(true)
+	end
 end
 
 
