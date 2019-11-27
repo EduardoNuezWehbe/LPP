@@ -104,7 +104,7 @@ module Practica6
                         return terrenoTotal.round(2)
                 end
 		def to_s
-			 "Eficiencia energetica: #{getValorCaloricoTotal}, Terreno: #{getTerreno}, GEI: #{getEmisionesGEI}" + super
+			 "Eficiencia energetica: #{getValorCaloricoTotal}, Terreno: #{getTerreno}, GEI: #{getEmisionGEI}" + super
 		end
 	end
 end

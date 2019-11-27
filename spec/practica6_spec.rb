@@ -258,7 +258,7 @@ describe Practica6::PlatosA do
                 expect(@platoA.getTerreno).to eq(1.1)
         end
 	 it"Eficiencia energetica formateada" do
-		 output = "Eficiencia energetica: 672.4El plato del abuelo{\ncarne de vaca: 21.1 · 0.0 · 3.1 · 50.0 · 164.0\nhuevos: 13.0 · 1.0 · 11.0 · 4.2 · 5.7\ntofu: 8.0 · 1.9 · 4.8 · 2.0 · 2.2\ncerveza: 0.5 · 3.6 · 0.0 · 0.24 · 0.22\n}" 
+		 output = "Eficiencia energetica: 672.4, Terreno: 1.1, GEI: 1.2El plato del abuelo{\ncarne de vaca: 21.1 · 0.0 · 3.1 · 50.0 · 164.0\nhuevos: 13.0 · 1.0 · 11.0 · 4.2 · 5.7\ntofu: 8.0 · 1.9 · 4.8 · 2.0 · 2.2\ncerveza: 0.5 · 3.6 · 0.0 · 0.24 · 0.22\n}" 
 
 		 expect(@platoA.to_s).to eq(output)
 	 end
