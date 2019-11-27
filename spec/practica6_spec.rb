@@ -405,6 +405,9 @@ describe Practica6::Platos do
 	it "plato español mejor que el vegetariano" do
 		expect(@platoVegetariano < @platoEspañol).to eq(true)
 	end
+	it "plato español es igual que el carnivoro" do
+		expect(@platoCarnivo == @platoEspañol).to eq(false)
+	end
 end
 
 
