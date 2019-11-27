@@ -302,3 +302,86 @@ describe Practica6::Platos do
 		expect(@plato == @plato).to eq(true)
 	end
 end
+
+describe Practica6::Platos do
+	before :all do
+		dietaEspañolaAlimentos = Practica6::Lista.new
+
+		dietaEspañolaAlimentos.insert(carneVaca)
+		dietaEspañolaAlimentos.insert(chocolate)
+		dietaEspañolaAlimentos.insert(nuez)
+		dietaEspañolaAlimentos.insert(lentejas)
+		dietaEspañolaAlimentos.insert(queso)
+
+		dietaEspañolaCantidad = Practica6::Lista.new
+		dietaEspañolaCantidad.insert(100)
+		dietaEspañolaCantidad.insert(200)
+		dietaEspañolaCantidad.insert(100)
+		dietaEspañolaCantidad.insert(100)
+		dietaEspañolaCantidad.insert(100)
+
+		dietaVascaAlimentos = Practica6::Lista.new
+
+		dietaVascaAlimentos.insert(lentejas)
+		dietaVascaAlimentos.insert(nuez)
+		dietaVascaAlimentos.insert(cerveza)
+		dietaVascaAlimentos.insert(chocolate)
+
+		dietaVascaCantidad = Practica6::Lista.new
+
+		dietaVascaCantidad.insert(200)
+		dietaVascaCantidad.insert(50)
+		dietaVascaCantidad.insert(150)
+		dietaVascaCantidad.insert(200)
+		
+		dietaCarnivoraAlimentos = Practica6::Lista.new
+
+		dietaCarnivoraAlimentos.insert(carneVaca)
+		dietaCarnivoraAlimentos.insert(pollo)
+		dietaCarnivoraAlimentos.insert(cerdo)
+		dietaCarnivoraAlimentos.insert(queso)
+		dietaCarnivoraAlimentos.insert(lecheDeVaca)
+		dietaCarnivoraAlimentos.insert(nuez)
+
+		dietaCarnivoraCantidad = Practica6::Lista.new
+	
+		dietaCarnivoraCantidad.insert(100)
+		dietaCarnivoraCantidad.insert(100)
+		dietaCarnivoraCantidad.insert(100)
+		dietaCarnivoraCantidad.insert(100)
+		dietaCarnivoraCantidad.insert(100)
+		dietaCarnivoraCantidad.insert(100)
+
+		dietaVegetalianaAlimentos = Practica6::Lista.new
+	
+		dietaVegetalianaAlimentos.insert(lentejas)
+		dietaVegetalianaAlimentos.insert(nuez)
+		dietaVegetalianaAlimentos.insert(tofu)
+		dietaVegetalianaAlimentos.insert(cafe)
+
+		dietaVegetalianaCantidad = Practica6::Lista.new
+
+		dietaVegetalianaCantidad.insert(200)
+		dietaVegetalianaCantidad.insert(200)
+		dietaVegetalianaCantidad.insert(100)
+		dietaVegetalianaCantidad.insert(100)
+
+		dietaVegetarianaAlimentos = Practica6::Lista.new
+
+		dietaVegetarianaAlimentos.insert(lecheDeVaca)
+		dietaVegetarianaAlimentos.insert(huevos)
+		dietaVegetarianaAlimentos.insert(nuez)
+		dietaVegetarianaAlimentos.insert(chocolate)
+		dietaVegetarianaAlimentos.insert(tofu)
+
+		dietaVegetarianaCantidad = Practica6::Lista.new
+
+		dietaVegetarianaCantidad.insert(100)
+		dietaVegetarianaCantidad.insert(15)
+		dietaVegetarianaCantidad.insert(100)
+		dietaVegetarianaCantidad.insert(185)
+		dietaVegetarianaCantidad.insert(200)
+	end
+end
+
+
