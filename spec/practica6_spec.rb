@@ -516,13 +516,18 @@ describe Practica6 do
                         @plato3 = Practica6::PlatosA.new("Vegetaliana", dietaVegetalianaAlimentos, dietaVegetalianaCantidad)
                         @plato4 = Practica6::PlatosA.new("Vasca", dietaVascaAlimentos, dietaVascaCantidad)
 			@plato5 = Practica6::PlatosA.new("Vegetariana", dietaVegetarianaAlimentos, dietaVegetarianaCantidad)
-			@plato6 = Practica6::PlatosA.new("Independiente", dietaIndependieteAlimentos, dietaIndependienteCantidad)
+			@plato6 = Practica6::PlatosA.new("Independiente", dietaIndependienteAlimentos, dietaIndependienteCantidad)
 
 
-			menuDietetico = [ @plato1 , @plato2 , @plato3 , @plato4 , @plato5 , @plato6 ]
+			@menuDietetico = [ @plato1 , @plato2 , @plato3 , @plato4 , @plato5 , @plato6 ]
 
-			preciosMenu = [ 5 , 8 , 4 , 3 , 15 , 12 ]
-                end
-        end
+			@preciosMenu = [ 5 , 8 , 4 , 3 , 15 , 12 ]
+
+	       	end
+        	it "Prueba de generacion de un array de platos" do
+			expect(@menuDietetico).to be_kind_of(Array)
+		end
+	end
 end
+
 
