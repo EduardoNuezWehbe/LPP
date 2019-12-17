@@ -85,7 +85,7 @@ module Practica6
 
 			geiTotal = 0
 			while aux != nil && aux2 != nil
-				geiTotal = aux.value.GEI * (aux2.value/100)
+				geiTotal += aux.value.GEI * (aux2.value/100)
 				aux = aux.next
 				aux2 = aux2.next
 			end
@@ -97,7 +97,7 @@ module Practica6
 
                         terrenoTotal = 0
                         while aux != nil && aux2 != nil
-                                terrenoTotal = aux.value.terreno * (aux2.value/100)
+                                terrenoTotal += aux.value.terreno * (aux2.value/100)
                                 aux = aux.next
                                 aux2 = aux2.next
                         end

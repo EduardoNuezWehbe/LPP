@@ -252,13 +252,13 @@ describe Practica6::PlatosA do
 		expect(Practica6::PlatosA.new(nil,nil,nil)).to be_kind_of(Practica6::Platos)
 	end
 	it"Valor total de a emisiones diarias de gases de efecto invernadero" do
-		expect(@platoA.getEmisionGEI).to eq(1.2)
+		expect(@platoA.getEmisionGEI).to eq(159.6)
 	end
 	 it"Valor total del terreno ocupado" do
-                expect(@platoA.getTerreno).to eq(1.1)
+		 expect(@platoA.getTerreno).to eq(504.5)
         end
 	 it"Eficiencia energetica formateada" do
-		 output = "Eficiencia energetica: 672.4, Terreno: 1.1, GEI: 1.2El plato del abuelo{\ncarne de vaca: 21.1 · 0.0 · 3.1 · 50.0 · 164.0\nhuevos: 13.0 · 1.0 · 11.0 · 4.2 · 5.7\ntofu: 8.0 · 1.9 · 4.8 · 2.0 · 2.2\ncerveza: 0.5 · 3.6 · 0.0 · 0.24 · 0.22\n}" 
+		 output = "Eficiencia energetica: 672.4, Terreno: 504.5, GEI: 159.6El plato del abuelo{\ncarne de vaca: 21.1 · 0.0 · 3.1 · 50.0 · 164.0\nhuevos: 13.0 · 1.0 · 11.0 · 4.2 · 5.7\ntofu: 8.0 · 1.9 · 4.8 · 2.0 · 2.2\ncerveza: 0.5 · 3.6 · 0.0 · 0.24 · 0.22\n}" 
 
 		 expect(@platoA.to_s).to eq(output)
 	 end
@@ -425,8 +425,8 @@ describe Practica6 do
                         dietaEspañolaAlimentos.insert(queso)
 
                         dietaEspañolaCantidad = Practica6::Lista.new
+                        dietaEspañolaCantidad.insert(2000)
                         dietaEspañolaCantidad.insert(100)
-                        dietaEspañolaCantidad.insert(200)
                         dietaEspañolaCantidad.insert(100)
                         dietaEspañolaCantidad.insert(100)
                         dietaEspañolaCantidad.insert(100)
@@ -442,9 +442,9 @@ describe Practica6 do
 
                         dietaCarnivoraCantidad = Practica6::Lista.new
 
-                        dietaCarnivoraCantidad.insert(100)
-                        dietaCarnivoraCantidad.insert(100)
-                        dietaCarnivoraCantidad.insert(100)
+                        dietaCarnivoraCantidad.insert(30)
+                        dietaCarnivoraCantidad.insert(30)
+                        dietaCarnivoraCantidad.insert(70)
                         dietaCarnivoraCantidad.insert(100)
                         dietaCarnivoraCantidad.insert(100)
                         dietaCarnivoraCantidad.insert(100)
@@ -458,75 +458,23 @@ describe Practica6 do
 
                         dietaVegetalianaCantidad = Practica6::Lista.new
 
-                        dietaVegetalianaCantidad.insert(200)
-                        dietaVegetalianaCantidad.insert(200)
+                        dietaVegetalianaCantidad.insert(50)
+                        dietaVegetalianaCantidad.insert(50)
                         dietaVegetalianaCantidad.insert(100)
                         dietaVegetalianaCantidad.insert(100)
-
-                        dietaVegetarianaAlimentos = Practica6::Lista.new
-
-                        dietaVegetarianaAlimentos.insert(lecheDeVaca)
-                        dietaVegetarianaAlimentos.insert(huevos)
-                        dietaVegetarianaAlimentos.insert(nuez)
-                        dietaVegetarianaAlimentos.insert(chocolate)
-                        dietaVegetarianaAlimentos.insert(tofu)
-
-                        dietaVegetarianaCantidad = Practica6::Lista.new
-
-                        dietaVegetarianaCantidad.insert(100)
-                        dietaVegetarianaCantidad.insert(15)
-                        dietaVegetarianaCantidad.insert(100)
-                        dietaVegetarianaCantidad.insert(185)
-                        dietaVegetarianaCantidad.insert(200)
-
-                        dietaIndependienteAlimentos = Practica6::Lista.new
-
-                        dietaIndependienteAlimentos.insert(lecheDeVaca)
-                        dietaIndependienteAlimentos.insert(carneVaca)
-                        dietaIndependienteAlimentos.insert(tofu)
-                        dietaIndependienteAlimentos.insert(huevos)
-                        dietaIndependienteAlimentos.insert(nuez)
-                        dietaIndependienteAlimentos.insert(chocolate)
-
-                        dietaIndependienteCantidad = Practica6::Lista.new
-
-                        dietaIndependienteCantidad.insert(100)
-                        dietaIndependienteCantidad.insert(100)
-                        dietaIndependienteCantidad.insert(100)
-                        dietaIndependienteCantidad.insert(100)
-                        dietaIndependienteCantidad.insert(100)
-                        dietaIndependienteCantidad.insert(100)
-
-			dietaVascaAlimentos = Practica6::Lista.new
-
-	                dietaVascaAlimentos.insert(lentejas)
-	                dietaVascaAlimentos.insert(nuez)
-	                dietaVascaAlimentos.insert(cerveza)
-	                dietaVascaAlimentos.insert(chocolate)
-	
-	                dietaVascaCantidad = Practica6::Lista.new
-
-	                dietaVascaCantidad.insert(200)
-	                dietaVascaCantidad.insert(50)
-	                dietaVascaCantidad.insert(150)
-	                dietaVascaCantidad.insert(200)
-
 			@plato1 = Practica6::PlatosA.new("Mediterraneo", dietaEspañolaAlimentos, dietaEspañolaCantidad)
                         @plato2 = Practica6::PlatosA.new("Carnivora", dietaCarnivoraAlimentos, dietaCarnivoraCantidad)
                         @plato3 = Practica6::PlatosA.new("Vegetaliana", dietaVegetalianaAlimentos, dietaVegetalianaCantidad)
-                        @plato4 = Practica6::PlatosA.new("Vasca", dietaVascaAlimentos, dietaVascaCantidad)
-			@plato5 = Practica6::PlatosA.new("Vegetariana", dietaVegetarianaAlimentos, dietaVegetarianaCantidad)
-			@plato6 = Practica6::PlatosA.new("Independiente", dietaIndependienteAlimentos, dietaIndependienteCantidad)
 
-
-			@menuDietetico = [ @plato1 , @plato2 , @plato3 , @plato4 , @plato5 , @plato6 ]
-
-			@preciosMenu = [ 5 , 8 , 4 , 3 , 15 , 12 ]
+			@menuDietetico = [ @plato1 , @plato2 , @plato3 ]
+			@preciosMenu = [ 5 , 8 , 4 ]
 
 	       	end
         	it "Prueba de generacion de un array de platos" do
 			expect(@menuDietetico).to be_kind_of(Array)
+			
 		end
+		
 	end
 end
 

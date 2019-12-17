@@ -40,6 +40,9 @@ module Practica6
 		s ="#{@nombre}: #{@proteinas} · #{@carbohidratos} · #{@lipidos} · #{@GEI} · #{@terreno}"
 		return s
 	end
+	def + (other)
+		getValorCalorico + other.getValorCalorico
+	end
 	def <=> (other)
         	getValorCalorico<=>other.getValorCalorico
         end
