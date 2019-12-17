@@ -410,4 +410,119 @@ describe Practica6::Platos do
 	end
 end
 
+##########################################################################
+##################   PRACTICA 9 CONTINUACION  ############################
+##########################################################################
+describe Practica6 do
+        context "#Menu dietetico" do
+                before :all do
+                        dietaEspañolaAlimentos = Practica6::Lista.new
+
+                        dietaEspañolaAlimentos.insert(carneVaca)
+                        dietaEspañolaAlimentos.insert(chocolate)
+                        dietaEspañolaAlimentos.insert(nuez)
+                        dietaEspañolaAlimentos.insert(lentejas)
+                        dietaEspañolaAlimentos.insert(queso)
+
+                        dietaEspañolaCantidad = Practica6::Lista.new
+                        dietaEspañolaCantidad.insert(100)
+                        dietaEspañolaCantidad.insert(200)
+                        dietaEspañolaCantidad.insert(100)
+                        dietaEspañolaCantidad.insert(100)
+                        dietaEspañolaCantidad.insert(100)
+
+                         dietaCarnivoraAlimentos = Practica6::Lista.new
+
+                        dietaCarnivoraAlimentos.insert(carneVaca)
+                        dietaCarnivoraAlimentos.insert(pollo)
+                        dietaCarnivoraAlimentos.insert(cerdo)
+                        dietaCarnivoraAlimentos.insert(queso)
+                        dietaCarnivoraAlimentos.insert(lecheDeVaca)
+                        dietaCarnivoraAlimentos.insert(nuez)
+
+                        dietaCarnivoraCantidad = Practica6::Lista.new
+
+                        dietaCarnivoraCantidad.insert(100)
+                        dietaCarnivoraCantidad.insert(100)
+                        dietaCarnivoraCantidad.insert(100)
+                        dietaCarnivoraCantidad.insert(100)
+                        dietaCarnivoraCantidad.insert(100)
+                        dietaCarnivoraCantidad.insert(100)
+
+                        dietaVegetalianaAlimentos = Practica6::Lista.new
+
+                        dietaVegetalianaAlimentos.insert(lentejas)
+                        dietaVegetalianaAlimentos.insert(nuez)
+                        dietaVegetalianaAlimentos.insert(tofu)
+                        dietaVegetalianaAlimentos.insert(cafe)
+
+                        dietaVegetalianaCantidad = Practica6::Lista.new
+
+                        dietaVegetalianaCantidad.insert(200)
+                        dietaVegetalianaCantidad.insert(200)
+                        dietaVegetalianaCantidad.insert(100)
+                        dietaVegetalianaCantidad.insert(100)
+
+                        dietaVegetarianaAlimentos = Practica6::Lista.new
+
+                        dietaVegetarianaAlimentos.insert(lecheDeVaca)
+                        dietaVegetarianaAlimentos.insert(huevos)
+                        dietaVegetarianaAlimentos.insert(nuez)
+                        dietaVegetarianaAlimentos.insert(chocolate)
+                        dietaVegetarianaAlimentos.insert(tofu)
+
+                        dietaVegetarianaCantidad = Practica6::Lista.new
+
+                        dietaVegetarianaCantidad.insert(100)
+                        dietaVegetarianaCantidad.insert(15)
+                        dietaVegetarianaCantidad.insert(100)
+                        dietaVegetarianaCantidad.insert(185)
+                        dietaVegetarianaCantidad.insert(200)
+
+                        dietaIndependienteAlimentos = Practica6::Lista.new
+
+                        dietaIndependienteAlimentos.insert(lecheDeVaca)
+                        dietaIndependienteAlimentos.insert(carneVaca)
+                        dietaIndependienteAlimentos.insert(tofu)
+                        dietaIndependienteAlimentos.insert(huevos)
+                        dietaIndependienteAlimentos.insert(nuez)
+                        dietaIndependienteAlimentos.insert(chocolate)
+
+                        dietaIndependienteCantidad = Practica6::Lista.new
+
+                        dietaIndependienteCantidad.insert(100)
+                        dietaIndependienteCantidad.insert(100)
+                        dietaIndependienteCantidad.insert(100)
+                        dietaIndependienteCantidad.insert(100)
+                        dietaIndependienteCantidad.insert(100)
+                        dietaIndependienteCantidad.insert(100)
+
+			dietaVascaAlimentos = Practica6::Lista.new
+
+	                dietaVascaAlimentos.insert(lentejas)
+	                dietaVascaAlimentos.insert(nuez)
+	                dietaVascaAlimentos.insert(cerveza)
+	                dietaVascaAlimentos.insert(chocolate)
+	
+	                dietaVascaCantidad = Practica6::Lista.new
+
+	                dietaVascaCantidad.insert(200)
+	                dietaVascaCantidad.insert(50)
+	                dietaVascaCantidad.insert(150)
+	                dietaVascaCantidad.insert(200)
+
+			@plato1 = Practica6::PlatosA.new("Mediterraneo", dietaEspañolaAlimentos, dietaEspañolaCantidad)
+                        @plato2 = Practica6::PlatosA.new("Carnivora", dietaCarnivoraAlimentos, dietaCarnivoraCantidad)
+                        @plato3 = Practica6::PlatosA.new("Vegetaliana", dietaVegetalianaAlimentos, dietaVegetalianaCantidad)
+                        @plato4 = Practica6::PlatosA.new("Vasca", dietaVascaAlimentos, dietaVascaCantidad)
+			@plato5 = Practica6::PlatosA.new("Vegetariana", dietaVegetarianaAlimentos, dietaVegetarianaCantidad)
+			@plato6 = Practica6::PlatosA.new("Independiente", dietaIndependieteAlimentos, dietaIndependienteCantidad)
+
+
+			menuDietetico = [ @plato1 , @plato2 , @plato3 , @plato4 , @plato5 , @plato6 ]
+
+			preciosMenu = [ 5 , 8 , 4 , 3 , 15 , 12 ]
+                end
+        end
+end
 
