@@ -471,8 +471,29 @@ describe Practica6 do
 
 	       	end
         	it "Prueba de generacion de un array de platos" do
-			expect(@menuDietetico).to be_kind_of(Array)
-			
+			expect(@menuDietetico).to be_kind_of(Array)			
+		end
+		it "Prueba para comprobar si los indicadores son correctos" do
+			 @mediaIndicadores = @menuDietetico.map { |x|
+                                        ((if x.getEmisionGEI < 800
+                                                1
+                                        elsif x.getEmisionGEI <= 1200
+                                                2
+                                        else
+                                                3
+                                        end
+                                        ) + (
+                                        if x.getValorCaloricoTotal < 670
+                                                1
+                                        elsif x.getValorCaloricoTotal <= 830
+                                                2
+                                        else
+                                                3
+                                        end
+					)).to_f / 2
+
+                                        }
+			 expect(@mediaIndicadores).to eq([2.5,1.5,1.0])
 		end
 		
 	end
