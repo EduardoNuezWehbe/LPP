@@ -496,8 +496,11 @@ describe Practica6 do
 		it "Prueba para comprobar si los indicadores son correctos" do
 			 expect(@mediaIndicadores).to eq([2.5,1.5,1.0])
 		end
-		it "Prueba para calcula el plato con maxima huella nutricional" do
+		it "Prueba para calcular el plato con maxima huella nutricional" do
 			expect(@menuDietetico.zip(@mediaIndicadores).reduce { |x , y| (x.last > y.last) ? x : y}.first).to eq(@plato1)
+		end
+		it "Prueba para incrementar los precios dependiendo del indicador de la maxima huella nutricional" do
+			expect(@preciosMenu.map { |x| x * @mediaIndicadores.max}).to eq(@preciosMenu.map { |x| x * 2.5})
 		end
 		
 	end
