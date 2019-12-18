@@ -469,11 +469,6 @@ describe Practica6 do
 			@menuDietetico = [ @plato1 , @plato2 , @plato3 ]
 			@preciosMenu = [ 5 , 8 , 4 ]
 
-	       	end
-        	it "Prueba de generacion de un array de platos" do
-			expect(@menuDietetico).to be_kind_of(Array)			
-		end
-		it "Prueba para comprobar si los indicadores son correctos" do
 			 @mediaIndicadores = @menuDietetico.map { |x|
                                         ((if x.getEmisionGEI < 800
                                                 1
@@ -490,10 +485,19 @@ describe Practica6 do
                                         else
                                                 3
                                         end
-					)).to_f / 2
+                                        )).to_f / 2
 
                                         }
+
+	       	end
+        	it "Prueba de generacion de un array de platos" do
+			expect(@menuDietetico).to be_kind_of(Array)			
+		end
+		it "Prueba para comprobar si los indicadores son correctos" do
 			 expect(@mediaIndicadores).to eq([2.5,1.5,1.0])
+		end
+		it "Prueba para calcula el plato con maxima huella nutricional" do
+			expect(@menuDietetico.zip(@mediaIndicadores).reduce { |x , y| (x.last > y.last) ? x : y}.first).to eq(@plato1)
 		end
 		
 	end
