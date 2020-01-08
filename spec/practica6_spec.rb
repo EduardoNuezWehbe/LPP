@@ -524,4 +524,23 @@ describe Practica6::PlatosDSL do
         end
 end
 
+describe Practica6::MenuDSL do
+        before :all do
+	        @menu = Practica6::MenuDSL.new("Combinado no. 1") do
+	                descripcion "hamburguesa, papas, refresco"
+	                componente :informacion => "Hamburguesa especial de la casa",
+	                :dinero => 4.25
+	                componente :informacion => "Papas peque~nas",
+	                :dinero => 1.75
+	                componente :informacion => "Refrescos de lata",
+       		        :dinero => 1.50
+        	        precio 7.50
+        	end
+        end
+        it "prueba del to_s devuelve el menu formateado" do
+                expect(@menu.to_s).to eq("Combinado no. 1 ( hamburguesa, papas, refresco )  =  [ Hamburguesa especial de la casa + 4.25 ]  [ Papas peque~nas + 1.75 ]  [ Refrescos de lata + 1.5 ]  Precio total: 7.5 "
+)
+        end
+end
+
 
