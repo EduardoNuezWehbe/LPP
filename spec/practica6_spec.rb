@@ -506,4 +506,22 @@ describe Practica6 do
 	end
 end
 
+########################################################
+############ PRACTICA 10 ###############################
+########################################################
+
+describe Practica6::PlatosDSL do
+        before :all do
+	        @plato = Practica6::PlatosDSL.new("Hamburguesa") do
+        	        nombre "Hamburguesa especial de la casa"
+        	        alimento "carne de vaca", :gramos => 100
+        	        alimento "huevo", :gramos => 20
+        	end
+        end
+        it "prueba para test" do
+                expect(@plato.to_s).to eq("Hamburguesa especial de la casa =  [ carne de vaca - 100 ]  [ huevo - 20 ] "
+)
+        end
+end
+
 
