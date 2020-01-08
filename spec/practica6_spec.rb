@@ -2,7 +2,7 @@ require "./lib/practica6/Platos.rb"
 require "spec_helper"
 require "./lib/practica6/Lista.rb"
 require "./lib/practica6/practica6.rb"
-
+require "./lib/practica6/PlatosDSL.rb"
 alimento = Practica6::Alimento.new("carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
 carneVaca = Practica6::Alimento.new("carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
 carneCordero = Practica6::Alimento.new("carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0)
@@ -518,7 +518,7 @@ describe Practica6::PlatosDSL do
         	        alimento "huevo", :gramos => 20
         	end
         end
-        it "prueba para test" do
+        it "Prueba metodo to_s devuelve el plato formateado" do
                 expect(@plato.to_s).to eq("Hamburguesa especial de la casa =  [ carne de vaca - 100 ]  [ huevo - 20 ] "
 )
         end
