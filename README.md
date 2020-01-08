@@ -11,3 +11,5 @@ empujar en el repositorio remoto todas las ramas de trabajo que se utilicen.
 Desarrollar una clase Ruby para representar Alimentos.
 Para el desarrollo de la clase utilizar la metodolog´ıa de desarrollo dirigido por pruebas (Test
 Driven Development - TDD) y la herramienta RSpec.
+
+[![Coverage Status](https://coveralls.io/repos/github/EduardoNuezWehbe/LPP/badge.svg?branch=master)](https://coveralls.io/github/EduardoNuezWehbe/LPP?branch=master)
